@@ -1,0 +1,11 @@
+@import './navbar.scss';
+@import './header.scss';
+@import './works.scss';
+
+body {
+    background: $bg-primary;
+}
+
+.section {
+    padding: 10px 40px;
+}
