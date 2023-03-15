@@ -2,16 +2,16 @@
   <nav class="navbar">
     <ul class="navbar-list">
       <li>
-        <a href="#">Crew</a>
+        <a href="#crew">Crew</a>
       </li>
       <li>
-        <a href="#">Works</a>
+        <a href="#works">Works</a>
       </li>
       <li>
-        <a href="#">Contact</a>
+        <a href="#contact">Contact</a>
       </li>
       <li>
-        <a href="#">Clients</a>
+        <a href="#clients">Clients</a>
       </li>
     </ul>
   </nav>

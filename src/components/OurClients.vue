@@ -1,7 +1,7 @@
 <template>
   <article class="section clients">
-    <h3 class="works-title">Our Clients</h3>
-    <ul class="container-clients">
+    <h3 class="works-title" id="clients">Our Clients</h3>
+    <ul class="container-clients" >
       <li v-for="client in clients" :key="client.id">
         <a href="#">
           <img :src="client.image" :alt="client.name" />

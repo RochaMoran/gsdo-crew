@@ -1,3 +1,4 @@
+@import './mixins/show-animation.scss';
 @import './navbar.scss';
 @import './header.scss';
 @import './works.scss';
@@ -5,6 +6,10 @@
 @import './ourClients.scss';
 @import './contactUs.scss';
 @import './footer.scss';
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background: $bg-primary;

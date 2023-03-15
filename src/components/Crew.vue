@@ -1,5 +1,5 @@
 <template>
-  <section class="section crew">
+  <section class="section crew" id="crew">
     <h3 class="works-title">Crew</h3>
     <div class="crew-container">
       <div class="crew-container-carrousel" :style="{ transform: 'translateX(' + (-currentIndex * 50) + '%)' }">

@@ -1,6 +1,6 @@
 <template>
-  <h3 class="works-title">Works Done</h3>
-  <section class="section works">
+  <h3 class="works-title" id="works">Works Done</h3>
+  <section class="section works" >
     <WorkComponent v-for="work in works" :title="work.title" :imgUrl="work.img" :description="work.description" :key="work.id" />
   </section>
 </template>
