@@ -1,6 +1,10 @@
 @import './navbar.scss';
 @import './header.scss';
 @import './works.scss';
+@import './crew.scss';
+@import './ourClients.scss';
+@import './contactUs.scss';
+@import './footer.scss';
 
 body {
     background: $bg-primary;
@@ -8,4 +12,5 @@ body {
 
 .section {
     padding: 10px 40px;
+    font-family: $font-primary;
 }

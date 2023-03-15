@@ -1,0 +1,63 @@
+.crew {
+    background-color: $color-primary;
+    color: $bg-primary;
+    
+    & .crew-container {
+        width: 85%;
+        overflow: hidden;
+        margin: 0 auto;
+        
+        & .crew-container-carrousel {
+            display: flex;
+            width: 200%;
+            transition: 2s ease-out;
+
+            & .crew-member {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                position: relative;
+                width: 100%;
+    
+                & .container-info {
+                    position: absolute;
+                    width: 600px;
+                    left: 0;
+                    color: $color-secondary;
+    
+                    & .crew-member__name {
+                        font-size: 3.5rem;
+                        font-weight: 700;
+                    }
+    
+                    & .crew-member__position {
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        font-style: italic;
+                    }
+                }
+    
+                & .crew-member__image {
+                    width: 600px;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+
+    & .crew-controls {
+        display: block;
+        margin: auto;
+        text-align: center;
+
+        & button {
+            margin: 5px;
+            outline: none;
+            background-color: $bg-primary;
+            border: 1px solid $color-primary;
+            border-radius: 5px;
+            padding: 5px 15px;
+            font-weight: bold;
+        }
+    }
+}

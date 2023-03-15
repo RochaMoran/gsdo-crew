@@ -1,0 +1,15 @@
+.container-clients {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & a {
+        & img {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            object-fit: contain;
+        }
+    }
+}
