@@ -1,5 +1,5 @@
 @mixin show-animation ($name, $x: 0, $y: 0, $time: 1.3s, $type_animation: ease-in-out) {
-    animation: show-animation-#{$name} $time $type_animation;
+    animation: show-animation-#{$name} $time $type_animation forwards;
 
     @keyframes show-animation-#{$name} {
         0% {

@@ -3,7 +3,7 @@
     <h3 class="works-title">Crew</h3>
     <div class="crew-container">
       <div class="crew-container-carrousel" :style="{ transform: 'translateX(' + (-currentIndex * 50) + '%)' }">
-        <CrewMember v-for="member in members" :key="member.id" :member="member"></CrewMember>
+        <CrewMember v-for="member, i in members" :key="member.id" :member="member" :isActive="currentIndex === i"></CrewMember>
       </div>
     </div>
     <div class="crew-controls">
@@ -25,6 +25,7 @@ export default {
   data () {
     return {
       currentIndex: 0,
+      interval: null,
       members: [
         {
           id: 1,
@@ -42,14 +43,21 @@ export default {
     }
   },
   created() {
-    setInterval(this.nextSlide, 5000);
+    this.automaticSlide();
   },
   methods: {
     prevSlide() {
       this.currentIndex = (this.currentIndex === 0) ? this.members.length - 1 : this.currentIndex - 1;
+      clearInterval(this.interval);
+      this.automaticSlide();
     },
     nextSlide() {
       this.currentIndex = (this.currentIndex === this.members.length - 1) ? 0 : this.currentIndex + 1;
+      clearInterval(this.interval);
+      this.automaticSlide();
+    },
+    automaticSlide() {
+      this.interval = setInterval(this.nextSlide, 5000);
     }
   }
 };

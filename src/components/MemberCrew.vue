@@ -1,5 +1,5 @@
 <template>
-    <article class="section crew-member">
+    <article class="section crew-member" :class="{'crew-member__active': isActive}">
       <div class="container-info">
         <span class="crew-member__name">{{ member.name }}</span>
         <p class="crew-member__position">{{ member.rol }}</p>
@@ -12,7 +12,8 @@
   export default {
     name: "MemberCrew",
     props: {
-      member: Object
+      member: Object,
+      isActive: Boolean
     }
   };
   </script>
