@@ -1,17 +1,8 @@
 <template>
   <nav class="navbar">
     <ul class="navbar-list">
-      <li>
-        <a href="#crew">Crew</a>
-      </li>
-      <li>
-        <a href="#works">Works</a>
-      </li>
-      <li>
-        <a href="#contact">Contact</a>
-      </li>
-      <li>
-        <a href="#clients">Clients</a>
+      <li v-for="item in sections" :key="item.id">
+        <a :href="item.link">{{ item.title }}</a>
       </li>
     </ul>
   </nav>
@@ -20,5 +11,15 @@
 <script>
 export default {
   name: "NavBar",
+  data () {
+    return {
+      sections: [
+        { id: 1, title: 'Crew', link: "#crew" },
+        { id: 2, title: 'Works', link: "#works" },
+        { id: 3, title: 'Contact', link: "#contact" },
+        { id: 4, title: 'Clients', link: "#clients" }
+      ],
+    }
+  },
 };
 </script>

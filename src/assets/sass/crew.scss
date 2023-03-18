@@ -2,6 +2,7 @@
     background-image: linear-gradient(90deg, $color-primary, $bg-secondary, $color-primary);
     background-attachment: fixed;
     color: $bg-primary;
+    opacity: 0;
     
     & .crew-container {
         width: 85%;
@@ -18,6 +19,7 @@
                 align-items: center;
                 position: relative;
                 width: 100%;
+                overflow: hidden;
     
                 & .container-info {
                     position: absolute;
@@ -28,6 +30,72 @@
                     & .crew-member__name {
                         font-size: 3.5rem;
                         font-weight: 700;
+                        transition: opacity 1s ease-in-out;
+                        color: $color-primary;
+                        animation: move linear 4s infinite alternate;  
+
+                        @keyframes move {
+                          0% {
+                            text-shadow:
+                              4px -4px 0 $color-secondary, 
+                              3px -3px 0 $color-secondary, 
+                              2px -2px 0 $color-secondary, 
+                              1px -1px 0 $color-secondary,
+                              -4px 4px 0 $bg-secondary, 
+                              -3px 3px 0 $bg-secondary, 
+                              -2px 2px 0 $bg-secondary, 
+                              -1px 1px 0 $bg-secondary
+                            ;
+                          }
+                          25% {    
+                            text-shadow:      
+                              -4px -4px 0 $bg-secondary, 
+                              -3px -3px 0 $bg-secondary, 
+                              -2px -2px 0 $bg-secondary, 
+                              -1px -1px 0 $bg-secondary,
+                              4px 4px 0 $color-secondary, 
+                              3px 3px 0 $color-secondary, 
+                              2px 2px 0 $color-secondary, 
+                              1px 1px 0 $color-secondary      
+                            ;
+                          }
+                          50% {
+                            text-shadow:
+                              -4px 4px 0 $color-secondary, 
+                              -3px 3px 0 $color-secondary, 
+                              -2px 2px 0 $color-secondary, 
+                              -1px 1px 0 $color-secondary,
+                              4px -4px 0 $bg-secondary, 
+                              3px -3px 0 $bg-secondary, 
+                              2px -2px 0 $bg-secondary, 
+                              1px -1px 0 $bg-secondary
+                            ;
+                          }
+                          75% {
+                            text-shadow:
+                              4px 4px 0 $bg-secondary, 
+                              3px 3px 0 $bg-secondary, 
+                              2px 2px 0 $bg-secondary, 
+                              1px 1px 0 $bg-secondary,
+                              -4px -4px 0 $color-secondary, 
+                              -3px -3px 0 $color-secondary, 
+                              -2px -2px 0 $color-secondary, 
+                              -1px -1px 0 $color-secondary      
+                            ;
+                          }
+                          100% {
+                            text-shadow:
+                              4px -4px 0 $color-secondary, 
+                              3px -3px 0 $color-secondary, 
+                              2px -2px 0 $color-secondary, 
+                              1px -1px 0 $color-secondary,
+                              -4px 4px 0 $bg-primary, 
+                              -3px 3px 0 $bg-primary, 
+                              -2px 2px 0 $bg-primary, 
+                              -1px 1px 0 $bg-primary
+                            ;
+                          }  
+                        }
 
                         @media screen and (max-width: 950px) {
                             font-size: 3rem;
@@ -101,6 +169,77 @@
     
                 & > .container-info {
                     animation: crew-member__active-info 2.3s ease-in-out;
+
+                    & .crew-member__name  {
+                        animation: move linear 4s infinite alternate;  
+                      }
+
+                      @keyframes move {
+                        0% {
+                          text-shadow:
+                            4px -4px 0 $color-secondary, 
+                            3px -3px 0 $color-secondary, 
+                            2px -2px 0 $color-secondary, 
+                            1px -1px 0 $color-secondary,
+                            -4px 4px 0 $bg-primary, 
+                            -3px 3px 0 $bg-primary, 
+                            -2px 2px 0 $bg-primary, 
+                            -1px 1px 0 $bg-primary
+                          ;
+                        }
+                        25% {    
+                          text-shadow:      
+                            -4px -4px 0 $bg-primary, 
+                            -3px -3px 0 $bg-primary, 
+                            -2px -2px 0 $bg-primary, 
+                            -1px -1px 0 $bg-primary,
+                            4px 4px 0 $color-secondary, 
+                            3px 3px 0 $color-secondary, 
+                            2px 2px 0 $color-secondary, 
+                            1px 1px 0 $color-secondary      
+                          ;
+                        }
+                        50% {
+                          text-shadow:
+                            -4px 4px 0 $color-secondary, 
+                            -3px 3px 0 $color-secondary, 
+                            -2px 2px 0 $color-secondary, 
+                            -1px 1px 0 $color-secondary,
+                            4px -4px 0 $bg-primary, 
+                            3px -3px 0 $bg-primary, 
+                            2px -2px 0 $bg-primary, 
+                            1px -1px 0 $bg-primary
+                          ;
+                        }
+                        75% {
+                          text-shadow:
+                            4px 4px 0 $bg-primary, 
+                            3px 3px 0 $bg-primary, 
+                            2px 2px 0 $bg-primary, 
+                            1px 1px 0 $bg-primary,
+                            -4px -4px 0 $color-secondary, 
+                            -3px -3px 0 $color-secondary, 
+                            -2px -2px 0 $color-secondary, 
+                            -1px -1px 0 $color-secondary      
+                          ;
+                        }
+                        100% {
+                          text-shadow:
+                            4px -4px 0 $color-secondary, 
+                            3px -3px 0 $color-secondary, 
+                            2px -2px 0 $color-secondary, 
+                            1px -1px 0 $color-secondary,
+                            -4px 4px 0 $bg-primary, 
+                            -3px 3px 0 $bg-primary, 
+                            -2px 2px 0 $bg-primary, 
+                            -1px 1px 0 $bg-primary
+                          ;
+                        }  
+                    }
+
+                    & .crew-member__position {
+                        @include show-animation("crew-position", 0, 50px, 1s, ease-in);
+                    }
                 }
     
                 & .crew-member__image {
