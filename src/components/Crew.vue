@@ -29,8 +29,8 @@ export default {
       members: [
         {
           id: 1,
-          name: "##### ###### ##### ######",
-          rol: "##### ###### ##### ###### ######",
+          name: "Steven Edgardo Rocha Moran",
+          rol: "Desarrollador Web - Frontend",
           image: stevenImg
         },
         {
@@ -89,6 +89,23 @@ export default {
     automaticSlide() {
       this.interval = setInterval(this.nextSlide, 20000);
     }
+  },
+  mounted() {
+    const options = {
+      rootMargin: '20px',
+      threshold: 1.0
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio === 1) {
+          entry.target.classList.add('show-item');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    observer.observe(this.$el);
   }
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <NavBar />
-  <HeaderComponent />
+    <HeaderComponent />
   <WorksComponent />
   <CrewComponent />
   <OurClients />
@@ -28,7 +28,7 @@ export default {
     OurClients,
     ContactForm,
     FooterComponent
-  }
+  },
 }
 </script>
 
