@@ -13,9 +13,25 @@ html {
 
 body {
     background: $bg-primary;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
 }
 
 .section {
     padding: 10px 40px;
     font-family: $font-primary;
+
+    @media screen and (max-width: 1050px) {
+        padding: 10px 20px;
+    }
+
+    @media screen and (max-width: 520px) {
+        padding: 10px;
+    }
+    
+    @media screen and (max-width: 420px) {
+        padding: 5px;
+    }
 }

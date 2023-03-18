@@ -1,5 +1,6 @@
 .crew {
-    background-color: $color-primary;
+    background-image: linear-gradient(90deg, $color-primary, $bg-secondary, $color-primary);
+    background-attachment: fixed;
     color: $bg-primary;
     
     & .crew-container {
@@ -8,8 +9,7 @@
         margin: 0 auto;
         
         & .crew-container-carrousel {
-            display: flex;
-            width: 200%;
+            display: grid;
             transition: 2s ease-out;
 
             & .crew-member {
@@ -28,22 +28,75 @@
                     & .crew-member__name {
                         font-size: 3.5rem;
                         font-weight: 700;
+
+                        @media screen and (max-width: 950px) {
+                            font-size: 3rem;
+                        }
+
+                        @media screen and (max-width: 750px) {
+                            font-size: 2.3rem;
+                        }
+
+                        @media screen and (max-width: 575px) {
+                            font-size: 1.8rem;
+                        }
                     }
     
                     & .crew-member__position {
                         font-size: 1.5rem;
                         font-weight: 400;
                         font-style: italic;
+
+                        @media screen and (max-width: 950px) {
+                            font-size: 1.3rem;
+                        }
+
+                        @media screen and (max-width: 750px) {
+                            font-size: 1.1rem;
+                        }
+                    }
+
+                    @media screen and (max-width: 950px) {
+                        width: 500px;
+                    }
+
+                    @media screen and (max-width: 750px) {
+                        width: 350px;
+                    }
+                    
+                    @media screen and (max-width: 575px) {
+                        position: relative;
+                        width: 100%;
+                        text-align: center;
+
+                        margin-top: 20px;
                     }
                 }
     
                 & .crew-member__image {
                     width: 600px;
                     z-index: 1;
+
+                    @media screen and (max-width: 950px) {
+                        width: 450px;
+                    }
+                    
+                    @media screen and (max-width: 750px) {
+                        width: 300px;
+                    }
+
+                    @media screen and (max-width: 575px) {
+                        width: 100%;
+                    }
+                }
+
+                @media screen and (max-width: 575px) {
+                   flex-direction: column-reverse;
                 }
             }
             
             & .crew-member__active {
+               @media screen and (min-width: 650px) {
                 animation: crew-member__active 1.3s ease-in forwards;
     
                 & > .container-info {
@@ -52,7 +105,9 @@
     
                 & .crew-member__image {
                     animation: crew-member__active-image 2.3s ease-in-out;
+                    z-index: 2;
                 }
+               }
             }
     
             @keyframes crew-member__active {
@@ -79,6 +134,10 @@
                     transform: translateX(0) translateY(0);
                 }
             }
+        }
+
+        @media screen and (max-width: 1250px) {
+            width: 100%;
         }
 
     }

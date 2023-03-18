@@ -4,7 +4,7 @@
       <p>
         Bringing your ideas to life with seamless design and flawless functionality.
       </p>
-      <button class="header-info__button">
+      <a class="header-info__button" href="#contact">
         Contact us
         <span class="blob-btn__inner">
         <span class="blob-btn__blobs">
@@ -14,7 +14,7 @@
           <span class="blob-btn__blob"></span>
         </span>
       </span>
-      </button>
+      </a>
     </article>
     <article class="header-titles">
       <h1>GSDO</h1>

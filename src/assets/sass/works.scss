@@ -5,11 +5,15 @@
     margin: 0;
     padding: 20px 0;
     text-decoration: underline;
+
+    @media only screen and (max-width: 600px) {
+        font-size: 2rem;
+    }
 }
 
 .works {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
     justify-content: center;
     align-items: center;
     margin: 20px 0;
@@ -18,7 +22,6 @@
 
     .work {
         position: relative;
-        width: 600px;
         margin: 10px;
         font-family: $font-primary;
         opacity: 0;
@@ -36,15 +39,47 @@
             
             & .work-title {
                 font-weight: bold;
-                font-size: 2rem;
+                font-size: 1.7rem;
                 margin: 0;
                 padding: 0;
+
+                @media screen and (max-width: 1300px) {
+                    font-size: 1.5rem;
+                }
+                
+                @media screen and (max-width: 840px) {
+                    font-size: 2rem;
+                }
+               
+                @media screen and (max-width: 580px) {
+                    font-size: 1.5rem;
+                }
+               
+                @media screen and (max-width: 400px) {
+                    font-size: 1.1rem;
+                }
             }
     
             & .work-description {
                 font-size: 1.2rem;
                 margin: 0;
                 padding: 0;
+
+                @media screen and (max-width: 1300px) {
+                    font-size: 1rem;
+                }
+
+                @media screen and (max-width: 840px) {
+                    font-size: 1.3rem;
+                }
+
+                @media screen and (max-width: 580px) {
+                    font-size: 1rem;
+                }
+
+                @media screen and (max-width: 400px) {
+                    font-size: .8rem;
+                }
             }
 
             & .work-button {
@@ -88,6 +123,10 @@
                 @include show-animation("button-item", 0, -40px, .7s, ease-out);
             }
         }
+    }
+
+    @media screen and (max-width: 400px) {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     }
 }
 

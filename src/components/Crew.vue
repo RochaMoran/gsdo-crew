@@ -2,7 +2,7 @@
   <section class="section crew" id="crew">
     <h3 class="works-title">Crew</h3>
     <div class="crew-container">
-      <div class="crew-container-carrousel" :style="{ transform: 'translateX(' + (-currentIndex * 50) + '%)' }">
+      <div class="crew-container-carrousel" :style="{ transform: 'translateX(' + (-currentIndex * 100) + '%)', gridTemplateColumns: `repeat(${members.length}, 100%)` }">
         <CrewMember v-for="member, i in members" :key="member.id" :member="member" :isActive="currentIndex === i"></CrewMember>
       </div>
     </div>
@@ -29,14 +29,44 @@ export default {
       members: [
         {
           id: 1,
-          name: "Steven Edgardo Rocha Moran",
-          rol: "Desarrollador Web Full Stack",
+          name: "##### ###### ##### ######",
+          rol: "##### ###### ##### ###### ######",
           image: stevenImg
         },
         {
           id: 2,
-          name: "Nestor Moran",
-          rol: "Desarrollador Web Full Stack",
+          name: "##### ###### ##### ######",
+          rol: "##### ###### ##### ###### ######",
+          image: stevenImg
+        },
+        {
+          id: 3,
+          name: "##### ###### ##### ######",
+          rol: "##### ###### ##### ###### ######",
+          image: stevenImg
+        },
+        {
+          id: 4,
+          name: "##### ###### ##### ######",
+          rol: "##### ###### ##### ###### ######",
+          image: stevenImg
+        },
+        {
+          id: 5,
+          name: "##### ###### ##### ######",
+          rol: "##### ###### ##### ###### ######",
+          image: stevenImg
+        },
+        {
+          id: 6,
+          name: "##### ###### ##### ######",
+          rol: "##### ###### ##### ###### ######",
+          image: stevenImg
+        },
+        {
+          id: 7,
+          name: "##### ###### ##### ######",
+          rol: "##### ###### ##### ###### ######",
           image: stevenImg
         },
       ]
@@ -57,7 +87,7 @@ export default {
       this.automaticSlide();
     },
     automaticSlide() {
-      this.interval = setInterval(this.nextSlide, 5000);
+      this.interval = setInterval(this.nextSlide, 20000);
     }
   }
 };

@@ -3,8 +3,7 @@
     <div class="footer-left">
       <h3>
         GSDO/Crew<span
-          ><img style="height: 20vh" src="" alt=""
-        /></span>
+          ></span>
       </h3>
 
       <p class="footer-links">

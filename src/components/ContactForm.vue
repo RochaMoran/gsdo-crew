@@ -58,5 +58,25 @@
 <script>
 export default {
   name: "ContactForm",
+  mounted() {
+    const options = {
+      rootMargin: '300px',
+      threshold: 1.0
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio === 1) {
+          this.$el.querySelector('.contact-form-wrapper').classList.add('show-wrapper')
+          this.$el.querySelector('.contact-links').classList.add('show-links')
+          this.$el.querySelector('.contact-box').classList.add('show-item');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    
+    observer.observe(this.$el);
+  },
 };
 </script>
