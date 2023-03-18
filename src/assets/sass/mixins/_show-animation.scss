@@ -1,0 +1,16 @@
+@mixin show-animation ($name, $x: 0, $y: 0, $time: 1.3s, $type_animation: ease-in-out) {
+    animation: show-animation-#{$name} $time $type_animation forwards;
+
+    @keyframes show-animation-#{$name} {
+        0% {
+            opacity: 0;
+            transform: translateX($x);
+            transform: translateY($y);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+            transform: translateY(0);
+        }
+    }
+}
