@@ -14,6 +14,7 @@
 <script>
 import somosLogo from "@/assets/images/logo-somos.webp";
 import foundationRamonTallajLogo from "@/assets/images/ramon-tallaj-foundation-logo.png";
+import legacyLogo from "@/assets/images/logo-legacy-unidos.png";
 export default {
   name: "OurClients",
   data() {
@@ -28,6 +29,11 @@ export default {
           id: 2,
           image: foundationRamonTallajLogo,
           name: "Fundación Ramón Tallaj"
+        },
+        {
+          id: 2,
+          image: legacyLogo,
+          name: "Legacies Unidos"
         },
       ],
     };

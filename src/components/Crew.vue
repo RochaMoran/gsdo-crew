@@ -81,7 +81,7 @@ export default {
       this.automaticSlide();
     },
     nextSlide() {
-      this.currentIndex = (this.currentIndex === this.members.length - 1) ? this.members.length : this.currentIndex + 1;
+      this.currentIndex = (this.currentIndex === this.members.length - 1) ? 0 : this.currentIndex + 1;
       clearInterval(this.interval);
       this.automaticSlide();
     },

@@ -37,69 +37,6 @@
                         color: $color-primary;
                         animation: move linear 4s infinite alternate;  
 
-                        @keyframes move {
-                          0% {
-                            text-shadow:
-                              4px -4px 0 $color-secondary, 
-                              3px -3px 0 $color-secondary, 
-                              2px -2px 0 $color-secondary, 
-                              1px -1px 0 $color-secondary,
-                              -4px 4px 0 $bg-secondary, 
-                              -3px 3px 0 $bg-secondary, 
-                              -2px 2px 0 $bg-secondary, 
-                              -1px 1px 0 $bg-secondary
-                            ;
-                          }
-                          25% {    
-                            text-shadow:      
-                              -4px -4px 0 $bg-secondary, 
-                              -3px -3px 0 $bg-secondary, 
-                              -2px -2px 0 $bg-secondary, 
-                              -1px -1px 0 $bg-secondary,
-                              4px 4px 0 $color-secondary, 
-                              3px 3px 0 $color-secondary, 
-                              2px 2px 0 $color-secondary, 
-                              1px 1px 0 $color-secondary      
-                            ;
-                          }
-                          50% {
-                            text-shadow:
-                              -4px 4px 0 $color-secondary, 
-                              -3px 3px 0 $color-secondary, 
-                              -2px 2px 0 $color-secondary, 
-                              -1px 1px 0 $color-secondary,
-                              4px -4px 0 $bg-secondary, 
-                              3px -3px 0 $bg-secondary, 
-                              2px -2px 0 $bg-secondary, 
-                              1px -1px 0 $bg-secondary
-                            ;
-                          }
-                          75% {
-                            text-shadow:
-                              4px 4px 0 $bg-secondary, 
-                              3px 3px 0 $bg-secondary, 
-                              2px 2px 0 $bg-secondary, 
-                              1px 1px 0 $bg-secondary,
-                              -4px -4px 0 $color-secondary, 
-                              -3px -3px 0 $color-secondary, 
-                              -2px -2px 0 $color-secondary, 
-                              -1px -1px 0 $color-secondary      
-                            ;
-                          }
-                          100% {
-                            text-shadow:
-                              4px -4px 0 $color-secondary, 
-                              3px -3px 0 $color-secondary, 
-                              2px -2px 0 $color-secondary, 
-                              1px -1px 0 $color-secondary,
-                              -4px 4px 0 $bg-primary, 
-                              -3px 3px 0 $bg-primary, 
-                              -2px 2px 0 $bg-primary, 
-                              -1px 1px 0 $bg-primary
-                            ;
-                          }  
-                        }
-
                         @media screen and (max-width: 950px) {
                             font-size: 3rem;
                         }
@@ -124,6 +61,10 @@
 
                         @media screen and (max-width: 750px) {
                             font-size: 1.1rem;
+                        }
+
+                        @media screen and (max-width: 575px) {
+                          margin-bottom: 30px;
                         }
                     }
 
@@ -182,69 +123,6 @@
                         animation: move linear 4s infinite alternate;  
                       }
 
-                      @keyframes move {
-                        0% {
-                          text-shadow:
-                            4px -4px 0 $color-secondary, 
-                            3px -3px 0 $color-secondary, 
-                            2px -2px 0 $color-secondary, 
-                            1px -1px 0 $color-secondary,
-                            -4px 4px 0 $bg-primary, 
-                            -3px 3px 0 $bg-primary, 
-                            -2px 2px 0 $bg-primary, 
-                            -1px 1px 0 $bg-primary
-                          ;
-                        }
-                        25% {    
-                          text-shadow:      
-                            -4px -4px 0 $bg-primary, 
-                            -3px -3px 0 $bg-primary, 
-                            -2px -2px 0 $bg-primary, 
-                            -1px -1px 0 $bg-primary,
-                            4px 4px 0 $color-secondary, 
-                            3px 3px 0 $color-secondary, 
-                            2px 2px 0 $color-secondary, 
-                            1px 1px 0 $color-secondary      
-                          ;
-                        }
-                        50% {
-                          text-shadow:
-                            -4px 4px 0 $color-secondary, 
-                            -3px 3px 0 $color-secondary, 
-                            -2px 2px 0 $color-secondary, 
-                            -1px 1px 0 $color-secondary,
-                            4px -4px 0 $bg-primary, 
-                            3px -3px 0 $bg-primary, 
-                            2px -2px 0 $bg-primary, 
-                            1px -1px 0 $bg-primary
-                          ;
-                        }
-                        75% {
-                          text-shadow:
-                            4px 4px 0 $bg-primary, 
-                            3px 3px 0 $bg-primary, 
-                            2px 2px 0 $bg-primary, 
-                            1px 1px 0 $bg-primary,
-                            -4px -4px 0 $color-secondary, 
-                            -3px -3px 0 $color-secondary, 
-                            -2px -2px 0 $color-secondary, 
-                            -1px -1px 0 $color-secondary      
-                          ;
-                        }
-                        100% {
-                          text-shadow:
-                            4px -4px 0 $color-secondary, 
-                            3px -3px 0 $color-secondary, 
-                            2px -2px 0 $color-secondary, 
-                            1px -1px 0 $color-secondary,
-                            -4px 4px 0 $bg-primary, 
-                            -3px 3px 0 $bg-primary, 
-                            -2px 2px 0 $bg-primary, 
-                            -1px 1px 0 $bg-primary
-                          ;
-                        }  
-                    }
-
                     & .crew-member__position {
                         @include show-animation("crew-position", 0, 50px, 1s, ease-in);
                     }
@@ -291,6 +169,7 @@
 
     & .crew-controls {
         display: flex;
+        flex-wrap: wrap;
         margin: auto;
         justify-content: center;
         position: absolute;
@@ -308,10 +187,79 @@
             height: 15px;
             width: 15px;
             font-weight: bold;
+       
+            @media screen and (max-width: 575px) {
+              height: 12px;
+              width: 12px;
+            }
         }
 
         & .active {
           background-color: $bg-primary;
         }
+
     }
+}
+
+@keyframes move {
+  0% {
+    text-shadow:
+      4px -4px 0 $color-secondary, 
+      3px -3px 0 $color-secondary, 
+      2px -2px 0 $color-secondary, 
+      1px -1px 0 $color-secondary,
+      -4px 4px 0 $bg-primary, 
+      -3px 3px 0 $bg-primary, 
+      -2px 2px 0 $bg-primary, 
+      -1px 1px 0 $bg-primary
+    ;
+  }
+  25% {    
+    text-shadow:      
+      -4px -4px 0 $bg-primary, 
+      -3px -3px 0 $bg-primary, 
+      -2px -2px 0 $bg-primary, 
+      -1px -1px 0 $bg-primary,
+      4px 4px 0 $color-secondary, 
+      3px 3px 0 $color-secondary, 
+      2px 2px 0 $color-secondary, 
+      1px 1px 0 $color-secondary      
+    ;
+  }
+  50% {
+    text-shadow:
+      -4px 4px 0 $color-secondary, 
+      -3px 3px 0 $color-secondary, 
+      -2px 2px 0 $color-secondary, 
+      -1px 1px 0 $color-secondary,
+      4px -4px 0 $bg-primary, 
+      3px -3px 0 $bg-primary, 
+      2px -2px 0 $bg-primary, 
+      1px -1px 0 $bg-primary
+    ;
+  }
+  75% {
+    text-shadow:
+      4px 4px 0 $bg-primary, 
+      3px 3px 0 $bg-primary, 
+      2px 2px 0 $bg-primary, 
+      1px 1px 0 $bg-primary,
+      -4px -4px 0 $color-secondary, 
+      -3px -3px 0 $color-secondary, 
+      -2px -2px 0 $color-secondary, 
+      -1px -1px 0 $color-secondary      
+    ;
+  }
+  100% {
+    text-shadow:
+      4px -4px 0 $color-secondary, 
+      3px -3px 0 $color-secondary, 
+      2px -2px 0 $color-secondary, 
+      1px -1px 0 $color-secondary,
+      -4px 4px 0 $bg-primary, 
+      -3px 3px 0 $bg-primary, 
+      -2px 2px 0 $bg-primary, 
+      -1px 1px 0 $bg-primary
+    ;
+  }  
 }
