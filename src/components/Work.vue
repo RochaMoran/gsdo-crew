@@ -3,7 +3,7 @@
     <div class="work-info">
       <span class="work-title">{{ title }}</span>
       <p class="work-description">{{ description }}</p>
-      <a :href="url" class="work-button" target="_blank">View Project</a>
+      <a :href="url" class="work-button" target="_blank">Visit Project</a>
     </div>
     <div class="work-image__container">
       <img class="work-image" :src="imgUrl" :alt="title">

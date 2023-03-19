@@ -18,13 +18,13 @@
     align-items: center;
     margin: 20px 0;
     padding: 20px 0;
-    border-bottom: 1px solid $color-primary;
 
     .work {
         position: relative;
         margin: 10px;
         font-family: $font-primary;
         opacity: 0;
+        overflow: hidden;
         
         & > .work-info {
             position: absolute;
@@ -93,19 +93,20 @@
                 background-color: $bg-primary;
                 color: $color-primary;
                 font-size: 1rem;
-                font-weight: bold;
+                font-weight: 500;
                 cursor: pointer;
                 transition: all 1s ease;
                 opacity: 0;
 
                 &:hover {
-                    background-color: $color-primary;
+                    background-color: $bg-secondary;
                     color: $bg-primary;
                 }
             }
         }
 
         & .work-image__container {
+            transition: transform .5s ease-in-out, filter .5s ease-in-out;
             filter: brightness(0.3);
 
             & .work-image {
@@ -121,6 +122,13 @@
                 margin: 10px auto;
 
                 @include show-animation("button-item", 0, -40px, .7s, ease-out);
+            }
+        }
+
+        &:hover {
+            & .work-image__container {
+                filter: brightness(0.5);
+                transform: scale(1.2);
             }
         }
     }

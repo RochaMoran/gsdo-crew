@@ -7,8 +7,7 @@
       </div>
     </div>
     <div class="crew-controls">
-      <button @click="prevSlide()">Prev</button>
-      <button @click="nextSlide()">Next</button>
+      <span v-for="member, i in members" :key="member.id" @click="changeSlide(i)" :class="{active: currentIndex === i}"></span>
     </div>
   </section>
 </template>
@@ -88,6 +87,11 @@ export default {
     },
     automaticSlide() {
       this.interval = setInterval(this.nextSlide, 20000);
+    },
+    changeSlide(index) {
+      this.currentIndex = index;
+      clearInterval(this.interval);
+      this.automaticSlide();
     }
   },
   mounted() {

@@ -21,6 +21,14 @@
       <span>/Crew</span>
     </article>
   </section>
+  <div class="burbujas">
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+  </div>
 </template>
 
 <script>
