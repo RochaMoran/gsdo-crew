@@ -1,12 +1,14 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <NavBar />
+  <LoadingComponent />
+  <template v-if="!loading">
+    <NavBar/>
     <HeaderComponent />
-  <WorksComponent />
-  <CrewComponent />
-  <OurClients />
-  <ContactForm />
-  <FooterComponent />
+    <WorksComponent />
+    <CrewComponent />
+    <OurClients />
+    <ContactForm />
+    <FooterComponent />
+  </template>
 </template>
 
 <script>
@@ -17,6 +19,7 @@ import CrewComponent from './components/Crew.vue'
 import OurClients from './components/OurClients.vue'
 import ContactForm from './components/ContactForm.vue'
 import FooterComponent from './components/Footer.vue'
+import LoadingComponent from './components/Loading.vue'
 
 export default {
   name: 'App',
@@ -27,8 +30,19 @@ export default {
     CrewComponent,
     OurClients,
     ContactForm,
-    FooterComponent
+    FooterComponent,
+    LoadingComponent
   },
+  data() {
+    return {
+      loading: true
+    }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.loading = false
+    }, 1450)
+  }
 }
 </script>
 

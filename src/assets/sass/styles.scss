@@ -13,10 +13,59 @@ html {
 
 body {
     background: $bg-primary;
+    background-image: url(/src/assets/images/backgound-noise.png);
+    background-size: contain;
+    background-attachment: fixed;
 
     &::-webkit-scrollbar {
         width: 0;
     }
+}
+
+.loading {
+    position: fixed;
+    z-index: 5;
+    background-color: $bg-secondary;
+    width: 100%;
+    height: 100%;
+    animation: loading-animation .8s ease-in-out forwards;
+    animation-delay: .9s;
+
+    & .loading-children {
+        position: fixed;
+        z-index: 5;
+        background-color: #2e4464;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+
+        animation: loading-children-animation 1.5s ease-in-out forwards;
+        
+    }
+}
+
+@keyframes loading-animation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+    
+}
+@keyframes loading-children-animation {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        // animation-duration: 8s;
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+        display: none;
+    }
+    
 }
 
 .section {
