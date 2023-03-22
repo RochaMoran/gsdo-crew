@@ -20,7 +20,7 @@
         & .crew-container-carrousel {
             display: flex;
             flex-wrap: nowrap; /* evita que los elementos salten de línea */
-            overflow: scroll; /* permite desplazamiento horizontal si los elementos no caben en la pantalla */
+            overflow-x: scroll; /* permite desplazamiento horizontal si los elementos no caben en la pantalla */
             padding: 40px 0;
             scroll-behavior: smooth;
             display: flex;
@@ -76,18 +76,17 @@
                     margin-top: 30px;
     
                     & .crew-member__name {
-                        font-size: 1.3rem;
-                        font-weight: 700;
-                        transition: opacity 1s ease-in-out;
-                        color: $color-secondary;
-                        // animation: move linear 4s infinite alternate;  
+                      font-size: 1.2rem;
+                      font-weight: 700;
+                      transition: opacity 1s ease-in-out;
+                      color: $color-secondary;
                     }
-    
+                      
                     & .crew-member__position {
-                        font-size: 1rem;
-                        font-weight: 400;
-                        font-style: italic;
-
+                      margin: 5px 0;
+                      font-size: 1rem;
+                      font-weight: 400;
+                      font-style: italic;
                     }
                 }
     
