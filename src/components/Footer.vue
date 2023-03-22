@@ -7,13 +7,13 @@
       </h3>
 
       <p class="footer-links">
-        <a href="#" class="link-1">Crew</a>
+        <a href="#crew" class="link-1">Crew</a>
 
-        <a href="#">Works</a>
+        <a href="#works">Works</a>
 
-        <a href="#">Contact</a>
+        <a href="#contact">Contact</a>
 
-        <a href="#">Clients</a>
+        <a href="#clients">Clients</a>
       </p>
 
       <p class="footer-company-name">Copyrights © {{ currentYear }}</p>

@@ -117,6 +117,7 @@
 
 .form-item {
   position: relative;
+  margin: 10px;
 }
 
 label, input, textarea {
@@ -177,6 +178,47 @@ textarea:valid+label {
 .submit-btn:active {
   transform: scale(1.1, 1.1);
   filter: sepia(0.5);
+}
+
+.invalid-feedback {
+  display: block;
+  position: relative;
+  bottom: 12px;
+  left: 10px;
+  color: red;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: .9rem;
+}
+
+.is-invalid {
+  border: 1px solid red;
+}
+
+.is-invalid__label {
+  color: red !important;
+}
+
+.resp-message {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  text-align: center;
+  padding: 8px;
+  color: #fff;
+  font-weight: bold;
+
+  @include show-animation("resp-message", 0, 100px, 1s, ease-in);
+}
+
+.resp-success {
+  background-color: green;
+}
+
+.resp-error {
+  background-color: red;
 }
 
 @media only screen and (max-width: 800px) {

@@ -2,12 +2,21 @@
   <section class="section crew" id="crew">
     <h3 class="works-title">Crew</h3>
     <div class="crew-container">
-      <div class="crew-container-carrousel" :style="{ transform: 'translateX(' + (-currentIndex * 100) + '%)', gridTemplateColumns: `repeat(${members.length}, 100%)` }">
-        <CrewMember v-for="member, i in members" :key="member.id" :member="member" :isActive="currentIndex === i"></CrewMember>
+      <div class="crew-container-carrousel">
+        <CrewMember
+          v-for="(member, i) in members"
+          :key="member.id"
+          :member="member"
+          :isActive="currentIndex === (i - 1)"
+        ></CrewMember>
       </div>
     </div>
     <div class="crew-controls">
-      <span v-for="member, i in members" :key="member.id" @click="changeSlide(i)" :class="{active: currentIndex === i}"></span>
+      <button class="button-prev" @click="prevSlide()">
+        <img src="@/assets/images/next.png" alt="next">
+      </button>
+      <button class="button-next" @click="nextSlide()">
+        <img src="@/assets/images/next.png" alt="back"></button>
     </div>
   </section>
 </template>
@@ -19,97 +28,102 @@ import stevenImg from "@/assets/images/me.png";
 export default {
   name: "CrewComponent",
   components: {
-    CrewMember
+    CrewMember,
   },
-  data () {
+  data() {
     return {
       currentIndex: 0,
       interval: null,
+      scrollPos: 0,
       members: [
         {
           id: 1,
           name: "Steven Edgardo Rocha Moran",
           rol: "Desarrollador Web - Frontend",
-          image: stevenImg
+          image: stevenImg,
         },
         {
           id: 2,
           name: "##### ###### ##### ######",
           rol: "##### ###### ##### ###### ######",
-          image: stevenImg
+          image: stevenImg,
         },
         {
           id: 3,
           name: "##### ###### ##### ######",
           rol: "##### ###### ##### ###### ######",
-          image: stevenImg
+          image: stevenImg,
         },
         {
           id: 4,
           name: "##### ###### ##### ######",
           rol: "##### ###### ##### ###### ######",
-          image: stevenImg
+          image: stevenImg,
         },
         {
           id: 5,
           name: "##### ###### ##### ######",
           rol: "##### ###### ##### ###### ######",
-          image: stevenImg
+          image: stevenImg,
         },
         {
           id: 6,
           name: "##### ###### ##### ######",
           rol: "##### ###### ##### ###### ######",
-          image: stevenImg
+          image: stevenImg,
         },
         {
           id: 7,
-          name: "##### ###### ##### ######",
+          name: "Ultimo ###### ##### ######",
           rol: "##### ###### ##### ###### ######",
-          image: stevenImg
+          image: stevenImg,
         },
-      ]
-    }
-  },
-  created() {
-    this.automaticSlide();
+      ],
+    };
   },
   methods: {
     prevSlide() {
-      this.currentIndex = (this.currentIndex === 0) ? this.members.length - 1 : this.currentIndex - 1;
-      clearInterval(this.interval);
-      this.automaticSlide();
+      if (this.scrollPos > 0) {
+        const carrousel = document.querySelector(".crew-container-carrousel");
+        this.currentIndex -= 1;
+        console.log(window.innerWidth);
+        this.scrollPos -= window.innerWidth < 600 ? 325 : 400;
+        carrousel.scrollTo({
+          top: 0,
+          left: this.scrollPos,
+          behavior: "smooth"
+        });
+      }
     },
     nextSlide() {
-      this.currentIndex = (this.currentIndex === this.members.length - 1) ? 0 : this.currentIndex + 1;
-      clearInterval(this.interval);
-      this.automaticSlide();
+      const carrousel = document.querySelector(".crew-container-carrousel");
+      if (this.scrollPos + carrousel.clientWidth < carrousel.scrollWidth) {
+        this.currentIndex += 1;
+        this.scrollPos += window.innerWidth < 600 ? 325 : 400;
+        carrousel.scrollTo({
+          top: 0,
+          left: this.scrollPos,
+          behavior: "smooth"
+        });
+      }
     },
-    automaticSlide() {
-      this.interval = setInterval(this.nextSlide, 20000);
-    },
-    changeSlide(index) {
-      this.currentIndex = index;
-      clearInterval(this.interval);
-      this.automaticSlide();
-    }
   },
   mounted() {
     const options = {
-      rootMargin: '20px',
-      threshold: 1.0
+      rootMargin: "20px",
+      threshold: 1.0,
     };
-    
+
     const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.intersectionRatio === 1) {
-          entry.target.classList.add('show-item');
+          entry.target.classList.add("show-item");
           observer.unobserve(entry.target);
         }
       });
     }, options);
 
     observer.observe(this.$el);
-  }
+  },
 };
 </script>
