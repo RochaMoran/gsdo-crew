@@ -2,161 +2,124 @@
     position: relative;
     background-image: linear-gradient(90deg, $color-primary, $bg-secondary, $color-primary);
     background-attachment: fixed;
-    color: $bg-primary;
     opacity: 0;
+    color: $bg-primary;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    z-index: 50;
+
+    @media screen and (max-width: 575px) {
+      padding: 0 !important;
+    }
     
     & .crew-container {
-        width: 85%;
-        overflow: hidden;
+        position: relative;
+        width: 90%;
         margin: 0 auto;
         
         & .crew-container-carrousel {
-            display: grid;
-            transition: 2s ease-out;
-
+            display: flex;
+            flex-wrap: nowrap; /* evita que los elementos salten de línea */
+            overflow: scroll; /* permite desplazamiento horizontal si los elementos no caben en la pantalla */
+            padding: 40px 0;
+            scroll-behavior: smooth;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            
+            &::-webkit-scrollbar {
+                width: 0;
+              }
+              // transition: 2s ease-out;
+              
             & .crew-member {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                position: relative;
-                width: 100%;
-                overflow: hidden;
+              position: relative;
+              flex: 0 0 33%; /* Ancho fijo de cada elemento del carrusel */
+              margin-right: 20px; /* Espacio entre los elementos del carrusel */
+              overflow: hidden;
+              text-align: center;
+
+              @media screen and (max-width: 950px) {
+                flex: 0 0 360px;
+                margin-right: 0;
+              }
+             
+              @media screen and (max-width: 800px) {
+                flex: 0 0 40%;
+                margin-right: 0;
+              }
+             
+              @media screen and (max-width: 700px) {
+                flex: 0 0 50%;
+                margin-right: 0;
+              }
+             
+              @media screen and (max-width: 600px) {
+                flex: 0 0 350px;
+                margin-right: 0;
+              }
+             
+              @media screen and (max-width: 350px) {
+                flex: 0 0 100%;
+                margin-right: 0;
+              }
+
+              &:hover {
+                & .crew-member__image {
+                    transform: scale(1.1);
+                    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
+                }
+              }
     
                 & .container-info {
-                    position: absolute;
-                    width: 600px;
-                    left: 0;
                     color: $color-secondary;
+                    margin-top: 30px;
     
                     & .crew-member__name {
-                        font-size: 3.5rem;
+                        font-size: 1.3rem;
                         font-weight: 700;
                         transition: opacity 1s ease-in-out;
-                        color: $color-primary;
-                        animation: move linear 4s infinite alternate;  
-
-                        @media screen and (max-width: 950px) {
-                            font-size: 3rem;
-                        }
-
-                        @media screen and (max-width: 750px) {
-                            font-size: 2.3rem;
-                        }
-
-                        @media screen and (max-width: 575px) {
-                            font-size: 1.8rem;
-                        }
+                        color: $color-secondary;
+                        // animation: move linear 4s infinite alternate;  
                     }
     
                     & .crew-member__position {
-                        font-size: 1.5rem;
+                        font-size: 1rem;
                         font-weight: 400;
                         font-style: italic;
 
-                        @media screen and (max-width: 950px) {
-                            font-size: 1.3rem;
-                        }
-
-                        @media screen and (max-width: 750px) {
-                            font-size: 1.1rem;
-                        }
-
-                        @media screen and (max-width: 575px) {
-                          margin-bottom: 30px;
-                        }
-                    }
-
-                    @media screen and (max-width: 950px) {
-                        width: 500px;
-                    }
-
-                    @media screen and (max-width: 750px) {
-                        width: 350px;
-                    }
-                    
-                    @media screen and (max-width: 575px) {
-                        position: relative;
-                        width: 100%;
-                        text-align: center;
-
-                        margin-top: 20px;
                     }
                 }
     
                 & .crew-member__image {
                     position: relative;
                     top: 10px;
-                    width: 600px;
-                    height: 100%;
+                    width: 100%;
                     object-fit: contain;
                     background-attachment: fixed;
                     z-index: 1;
-
-                    @media screen and (max-width: 950px) {
-                        width: 450px;
-                    }
-                    
-                    @media screen and (max-width: 750px) {
-                        width: 300px;
-                    }
-
-                    @media screen and (max-width: 575px) {
-                        width: 100%;
-                    }
+                    transition: transform .2s ease-in, filter .2s ease-in;
                 }
 
                 @media screen and (max-width: 575px) {
                    flex-direction: column-reverse;
                 }
             }
-            
+
             & .crew-member__active {
-               @media screen and (min-width: 650px) {
-                animation: crew-member__active 1.3s ease-in forwards;
-    
-                & > .container-info {
-                    animation: crew-member__active-info 2.3s ease-in-out;
-
-                    & .crew-member__name  {
-                        animation: move linear 4s infinite alternate;  
-                      }
-
-                    & .crew-member__position {
-                        @include show-animation("crew-position", 0, 50px, 1s, ease-in);
-                    }
-                }
-    
-                & .crew-member__image {
-                    animation: crew-member__active-image 2.3s ease-in-out;
-                    z-index: 2;
-                }
-               }
+              @media screen and (min-width: 800px) {
+                transform: scale(.9);
+                animation: crew-member__active .3s ease-in forwards;
+              }
             }
+            
     
             @keyframes crew-member__active {
                 0% {
-                    transform: scale(.5);
+                    transform: scale(.9);
                 }
                 100% {
-                    transform: scale(1);
-                }
-            }
-            @keyframes crew-member__active-info {
-                0% {
-                    transform: translateX(500px) translateY(-50%);
-                }
-                100% {
-                    transform: translateX(0) translateY(0);
-                }
-            }
-            @keyframes crew-member__active-image {
-                0% {
-                    transform: translateX(-500px) translateY(50%);
-                }
-                100% {
-                    transform: translateX(0) translateY(0);
+                    transform: scale(1.2);
                 }
             }
         }
@@ -167,31 +130,42 @@
 
     }
 
-    & .crew-controls {
-        display: flex;
-        flex-wrap: wrap;
-        margin: auto;
-        justify-content: center;
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        width: 100%;
-        
-        & span {
-            display: block;
+    & .crew-controls {      
+        & button {
+            position: absolute;
             cursor: pointer;
-            margin: 0 5px;
             outline: none;
-            background-color: $color-secondary;
             border-radius: 50%;
-            height: 15px;
-            width: 15px;
             font-weight: bold;
-       
-            @media screen and (max-width: 575px) {
-              height: 12px;
-              width: 12px;
+            padding: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background-color: transparent;
+            z-index: 5;
+
+            & img {
+                width: 40px;
+                object-fit: cover;
+                transition: transform .3s ease-in-out;
+
+                &:hover {
+                  transform: scale(1.2);
+                }
+
+                @media screen and (max-width: 575px) {
+                  width: 25px;
+                }
             }
+        }
+
+        & .button-prev {
+            left: 10px;
+            transform: rotate(180deg);
+        }
+
+        & .button-next {
+            right: 10px;
         }
 
         & .active {
