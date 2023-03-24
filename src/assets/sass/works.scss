@@ -10,6 +10,8 @@
     & span {
         background-color: $color-primary;
         padding: 0 30px;
+        position: relative;
+        z-index: 1;
     }
 
     &::after {
@@ -19,9 +21,8 @@
         transform: translateY(-50%);
         left: 0;
         width: 100%;
-        height: 3px;    
+        height: 1px;    
         background-color: $bg-primary;
-        z-index: -1;
     }
 
     @media only screen and (max-width: 600px) {
@@ -34,7 +35,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 20px 0;
     padding: 20px 0;
     background-color: $color-primary;
 

@@ -1,6 +1,6 @@
 <template>
   <section class="section crew" id="crew">
-    <TitleComponent title="Crew" />
+    <TitleComponent title="THE CREW" />
     <div class="crew-container">
       <div class="crew-container-carrousel">
         <CrewMember
@@ -103,23 +103,6 @@ export default {
         });
       }
     },
-  },
-  mounted() {
-    const options = {
-      rootMargin: "20px",
-      threshold: 1.0,
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio === 1) {
-          entry.target.classList.add("show-item");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-
-    observer.observe(this.$el);
-  },
+  }
 };
 </script>
