@@ -12,12 +12,32 @@
 }
 
 .works {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
     margin: 20px 0;
     padding: 20px 0;
+    background-color: $color-primary;
+
+    & .work-one {
+        width: 65.5%;
+
+        & .work {
+            height: 100%;
+        }
+
+        @media screen and (max-width: 800px) {
+            width: 100%;
+        }
+    }
+    
+    & .work-container {
+        width: 34.5%;
+        @media screen and (max-width: 800px) {
+            width: 100%;
+        }
+    }
 
     .work {
         position: relative;
@@ -25,95 +45,14 @@
         font-family: $font-primary;
         opacity: 0;
         overflow: hidden;
-        border-radius: 20px 0 20px 0;
-        border-bottom: 5px double $bg-secondary;
-        border-top: 5px double $bg-secondary;
-        
-        & > .work-info {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -20%);
-            z-index: 1;
-            color: $color-secondary;
-            width: 100%;
-            text-align: center;
-            transition: all .4s ease;
-            
-            & .work-title {
-                font-weight: bold;
-                font-size: 1.4rem;
-                margin: 0;
-                padding: 0;
-
-                @media screen and (max-width: 1300px) {
-                    font-size: 1.5rem;
-                }
-                
-                @media screen and (max-width: 840px) {
-                    font-size: 2rem;
-                }
-               
-                @media screen and (max-width: 580px) {
-                    font-size: 1.5rem;
-                }
-               
-                @media screen and (max-width: 400px) {
-                    font-size: 1.1rem;
-                }
-            }
-    
-            & .work-description {
-                font-size: 1.2rem;
-                margin: 0;
-                padding: 0;
-
-                @media screen and (max-width: 1300px) {
-                    font-size: 1rem;
-                }
-
-                @media screen and (max-width: 840px) {
-                    font-size: 1.3rem;
-                }
-
-                @media screen and (max-width: 580px) {
-                    font-size: 1rem;
-                }
-
-                @media screen and (max-width: 400px) {
-                    font-size: .8rem;
-                }
-            }
-
-            & .work-button {
-                display: block;
-                text-decoration: none;
-                margin: 10px 0;
-                width: max-content;
-                padding: 7px 10px;
-                border: none;
-                border-radius: 5px;
-                background-color: $bg-primary;
-                color: $color-primary;
-                font-size: 1rem;
-                font-weight: 500;
-                cursor: pointer;
-                transition: all 1s ease;
-                opacity: 0;
-
-                &:hover {
-                    background-color: $bg-secondary;
-                    color: $bg-primary;
-                }
-            }
-        }
 
         & .work-image__container {
+            filter: brightness(.9);
             transition: transform .5s ease-in-out, filter .5s ease-in-out;
-            filter: brightness(0.3);
 
             & .work-image {
                 width: 100%;
+                height: 100%;
             }
         }
 
@@ -131,7 +70,6 @@
         &:hover {
             & .work-image__container {
                 filter: brightness(0.5);
-                transform: scale(1.2);
             }
         }
     }
