@@ -1,7 +1,6 @@
 .crew {
     position: relative;
-    background-image: linear-gradient(90deg, $color-primary, $bg-secondary, $color-primary);
-    background-attachment: fixed;
+    background-color: $color-primary;
     opacity: 0;
     color: $bg-primary;
     padding-top: 0 !important;
@@ -72,14 +71,13 @@
               }
     
                 & .container-info {
-                    color: $color-secondary;
+                    color: black;
                     margin-top: 30px;
     
                     & .crew-member__name {
                       font-size: 1.2rem;
                       font-weight: 700;
                       transition: opacity 1s ease-in-out;
-                      color: $color-secondary;
                     }
                       
                     & .crew-member__position {
@@ -98,6 +96,8 @@
                     background-attachment: fixed;
                     z-index: 1;
                     transition: transform .2s ease-in, filter .2s ease-in;
+                    border-radius: 50%;
+                    filter: grayscale(1);
                 }
 
                 @media screen and (max-width: 575px) {
@@ -142,6 +142,7 @@
             border: none;
             background-color: transparent;
             z-index: 5;
+            filter: invert(1);
 
             & img {
                 width: 40px;
