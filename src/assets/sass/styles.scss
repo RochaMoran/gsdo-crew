@@ -11,7 +11,8 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+body,
+.navbar-active {
     background: $bg-primary;
     background-image: url(/src/assets/images/backgound-noise.png);
     background-size: contain;
@@ -43,6 +44,49 @@ body {
         
     }
 }
+
+
+.resp-message {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    text-align: center;
+    padding: 8px;
+    color: #fff;
+    font-weight: bold;
+  
+    @include show-animation("resp-message", 0, 100px, 1s, ease-in);
+}
+  
+.resp-success {
+    background-color: green;
+}
+
+.resp-error {
+    background-color: red;
+}
+
+
+.spinner {
+    display: inline-block;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
 
 @keyframes loading-animation {
     0% {

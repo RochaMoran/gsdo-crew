@@ -4,7 +4,7 @@
     color: $bg-primary;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    z-index: 50;
+    z-index: 10;
 
     @media screen and (max-width: 575px) {
       padding: 0 !important;

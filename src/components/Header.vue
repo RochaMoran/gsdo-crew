@@ -1,5 +1,5 @@
 <template>
-  <section class="section header">
+  <section class="section header" id="header">
     <article class="header-info">
       <p>
         The details are not the details, they make the desing.

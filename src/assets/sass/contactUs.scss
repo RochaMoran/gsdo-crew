@@ -212,28 +212,6 @@ textarea:valid+label {
   color: red !important;
 }
 
-.resp-message {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 5;
-  text-align: center;
-  padding: 8px;
-  color: #fff;
-  font-weight: bold;
-
-  @include show-animation("resp-message", 0, 100px, 1s, ease-in);
-}
-
-.resp-success {
-  background-color: green;
-}
-
-.resp-error {
-  background-color: red;
-}
-
 @media only screen and (max-width: 800px) {
   .contact-title {
     font-size: clamp(40px, 10vw, 60px);

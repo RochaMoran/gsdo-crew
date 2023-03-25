@@ -1,5 +1,5 @@
 <template>
-  <article class="section clients">
+  <section class="section clients" id="clients">
     <TitleComponent title="CLIENTS" />
     <ul class="container-clients" >
       <li v-for="client in clients" :key="client.id">
@@ -8,7 +8,7 @@
         </a>
       </li>
     </ul>
-  </article>
+  </section>
 </template>
 
 <script>

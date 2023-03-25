@@ -4,10 +4,9 @@
     <div class="crew-container">
       <div class="crew-container-carrousel">
         <CrewMember
-          v-for="(member, i) in members"
+          v-for="member in members"
           :key="member.id"
           :member="member"
-          :isActive="currentIndex === (i - 1)"
         ></CrewMember>
       </div>
     </div>
@@ -82,8 +81,7 @@ export default {
       if (this.scrollPos > 0) {
         const carrousel = document.querySelector(".crew-container-carrousel");
         this.currentIndex -= 1;
-        console.log(window.innerWidth);
-        this.scrollPos -= window.innerWidth < 600 ? 325 : 400;
+        this.scrollPos -= window.innerWidth < 600 ? 350 : 400;
         carrousel.scrollTo({
           top: 0,
           left: this.scrollPos,
@@ -95,7 +93,7 @@ export default {
       const carrousel = document.querySelector(".crew-container-carrousel");
       if (this.scrollPos + carrousel.clientWidth < carrousel.scrollWidth) {
         this.currentIndex += 1;
-        this.scrollPos += window.innerWidth < 600 ? 325 : 400;
+        this.scrollPos += window.innerWidth < 600 ? 350 : 400;
         carrousel.scrollTo({
           top: 0,
           left: this.scrollPos,

@@ -1,5 +1,5 @@
 <template>
-  <section class="section works">
+  <section class="section works" id="works">
     <article class="work-one">
       <WorkComponent title="/Imodium Ad Campaign" :img="imgFoundation" />
     </article>

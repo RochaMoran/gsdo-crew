@@ -49,7 +49,7 @@
           <p>551.775.0020</p>
           <br>
           <br>
-          <p>Work /Crew /Clients /Home</p>
+          <p class="links-footer"><a href="#works">Work</a> / <a href="#crew">Crew</a> / <a href="#clients">Clients</a> / <a href="#header">Home</a></p>
         </div>
       </article>
   
