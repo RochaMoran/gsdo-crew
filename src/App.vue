@@ -6,7 +6,6 @@
     <WorksComponent />
     <CrewComponent />
     <OurClients />
-    <ContactForm />
     <FooterComponent />
   </template>
 </template>
@@ -17,7 +16,6 @@ import HeaderComponent from './components/Header.vue'
 import WorksComponent from './components/Works.vue'
 import CrewComponent from './components/Crew.vue'
 import OurClients from './components/OurClients.vue'
-import ContactForm from './components/ContactForm.vue'
 import FooterComponent from './components/Footer.vue'
 import LoadingComponent from './components/Loading.vue'
 
@@ -29,7 +27,6 @@ export default {
     WorksComponent,
     CrewComponent,
     OurClients,
-    ContactForm,
     FooterComponent,
     LoadingComponent
   },

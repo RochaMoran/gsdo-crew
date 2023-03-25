@@ -1,7 +1,19 @@
 <template>
-  <h3 class="works-title" id="works">Works Done</h3>
   <section class="section works">
-    <WorkComponent v-for="work in works" :title="work.title" :url="work.url" :imgUrl="work.img" :description="work.description" :key="work.id" />
+    <article class="work-one">
+      <WorkComponent title="/Imodium Ad Campaign" :img="imgFoundation" />
+    </article>
+    <article class="work-container">
+      <WorkComponent title="/Foundation Store" :img="imgFoundationWs" />
+      <WorkComponent title="/Foundation Website" :img="imgSomosExpoS22" />
+    </article>
+    <article class="work-container">
+      <WorkComponent title="/Somos Landing Page" :img="imgSomosWorldVaccine" />
+      <WorkComponent title="/Somos World Vaccine" :img="imgFoundation" />
+    </article>
+    <article class="work-one">
+      <WorkComponent title="/Somos Expo SD22" :img="imgSomosLandingpage" />
+    </article>
   </section>
 </template>
 
@@ -20,44 +32,12 @@ export default {
   },
   data() {
     return {
-      works: [
-        {
-          id: 1,
-          title: "Foundation Store",
-          description: "A store for a foundation",
-          img: imgFoundation,
-          url: 'https://drramontallajfoundation.org/store'
-        },
-        {
-          id: 2,
-          title: "Foundation Website",
-          description: "A website for a foundation",
-          img: imgFoundationWs,
-          url: 'https://drramontallajfoundation.org/'
-        },
-        {
-          id: 3,
-          title: "SOMOS exposd22",
-          description: "A expo for a SOMOS",
-          img: imgSomosExpoS22,
-          url: 'https://somos-exposd22.vercel.app/'
-        },
-        {
-          id: 4,
-          title: "SOMOS landingpage work",
-          description: "A landingpage for a SOMOS",
-          img: imgSomosLandingpage,
-          url: 'https://somoscommunitycare.org/back-to-school/'
-        },
-        {
-          id: 5,
-          title: "SOMOS world vaccine",
-          description: "A world vaccine for a SOMOS",
-          img: imgSomosWorldVaccine,
-          url: 'https://somos-world-vaccine-congress-2022.vercel.app/'
-        },
-      ]
-    }
-  }
+      imgFoundation,
+      imgFoundationWs,
+      imgSomosExpoS22,
+      imgSomosLandingpage,
+      imgSomosWorldVaccine
+    };
+  },
 };
 </script>

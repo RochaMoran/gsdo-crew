@@ -1,14 +1,10 @@
 <template>
-  <article class="work">
-    <div class="work-info">
-      <span class="work-title">{{ title }}</span>
-      <p class="work-description">{{ description }}</p>
-      <a :href="url" class="work-button" target="_blank">Visit Project</a>
-    </div>
+  <div class="work">
     <div class="work-image__container">
-      <img class="work-image" :src="imgUrl" :alt="title">
+      <img class="work-image" :src="img" :alt="title">
+      <span class="work-title">{{ title }}</span>
     </div>
-  </article>
+  </div>
 </template>
 
 <script>
@@ -16,9 +12,7 @@ export default {
   name: "WorkComponent",
   props: {
     title: String,
-    imgUrl: String,
-    description: String,
-    url: String,
+    img: String
   },
   mounted() {
     const options = {

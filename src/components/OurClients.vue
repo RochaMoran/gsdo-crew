@@ -1,6 +1,6 @@
 <template>
   <article class="section clients">
-    <h3 class="works-title" id="clients">Our Clients</h3>
+    <TitleComponent title="CLIENTS" />
     <ul class="container-clients" >
       <li v-for="client in clients" :key="client.id">
         <a href="#">
@@ -15,8 +15,13 @@
 import somosLogo from "@/assets/images/logo-somos.webp";
 import foundationRamonTallajLogo from "@/assets/images/ramon-tallaj-foundation-logo.png";
 import legacyLogo from "@/assets/images/logo-legacy-unidos.png";
+import TitleComponent from "@/components/Title.vue";
+
 export default {
   name: "OurClients",
+  components: {
+    TitleComponent,
+  },
   data() {
     return {
       clients: [

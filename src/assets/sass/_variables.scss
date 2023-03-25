@@ -1,8 +1,15 @@
-$bg-primary: yellow;
+@font-face {
+    font-family: 'Breve Slab';
+    src: url('~@/assets/fonts/breve-slab.ttf');
+    font-style: none;
+    font-weight: normal;
+}
+
+$bg-primary: rgb(0, 0, 0);
 $bg-secondary: #1f2e43;
 
-$color-primary: #000;
+$color-primary: #ffffff;
 $color-secondary: #fff;
 
-$font-primary: 'Noto Sans', sans-serif;
+$font-primary: 'Breve Slab', sans-serif;
 $font-secondary: 'Roboto', sans-serif;

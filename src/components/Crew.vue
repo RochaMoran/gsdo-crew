@@ -1,6 +1,6 @@
 <template>
   <section class="section crew" id="crew">
-    <h3 class="works-title">Crew</h3>
+    <TitleComponent title="THE CREW" />
     <div class="crew-container">
       <div class="crew-container-carrousel">
         <CrewMember
@@ -23,12 +23,14 @@
 
 <script>
 import CrewMember from "./MemberCrew.vue";
-import stevenImg from "@/assets/images/me.png";
+import stevenImg from "@/assets/images/me.jpg";
+import TitleComponent from "@/components/Title.vue";
 
 export default {
   name: "CrewComponent",
   components: {
     CrewMember,
+    TitleComponent
   },
   data() {
     return {
@@ -38,46 +40,40 @@ export default {
       members: [
         {
           id: 1,
-          name: "Steven Edgardo Rocha Moran",
-          rol: "Desarrollador Web - Frontend",
+          name: "Steven Rocha",
+          rol: "Web Developer/UX",
           image: stevenImg,
         },
         {
           id: 2,
-          name: "##### ###### ##### ######",
-          rol: "##### ###### ##### ###### ######",
+          name: "Hans Daniel",
+          rol: "Creative Director",
           image: stevenImg,
         },
         {
           id: 3,
-          name: "##### ###### ##### ######",
-          rol: "##### ###### ##### ###### ######",
+          name: "Euclides Alonso",
+          rol: "SCD/3D Artist",
           image: stevenImg,
         },
         {
           id: 4,
-          name: "##### ###### ##### ######",
-          rol: "##### ###### ##### ###### ######",
+          name: "Marlene Nuñez",
+          rol: "Project Manager",
           image: stevenImg,
         },
         {
           id: 5,
-          name: "##### ###### ##### ######",
-          rol: "##### ###### ##### ###### ######",
+          name: "Nestor Molina",
+          rol: "Desarrollador Web",
           image: stevenImg,
         },
         {
           id: 6,
-          name: "##### ###### ##### ######",
-          rol: "##### ###### ##### ###### ######",
+          name: "Nestor Del Prado",
+          rol: "Diseñador Gráfico",
           image: stevenImg,
-        },
-        {
-          id: 7,
-          name: "Ultimo ###### ##### ######",
-          rol: "##### ###### ##### ###### ######",
-          image: stevenImg,
-        },
+        }
       ],
     };
   },
@@ -107,23 +103,6 @@ export default {
         });
       }
     },
-  },
-  mounted() {
-    const options = {
-      rootMargin: "20px",
-      threshold: 1.0,
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio === 1) {
-          entry.target.classList.add("show-item");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-
-    observer.observe(this.$el);
-  },
+  }
 };
 </script>

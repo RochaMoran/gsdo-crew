@@ -25,6 +25,18 @@
   padding: 8% 5% 10% 5%;
 }
 
+.form-textarea {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  & .submit-btn {
+    margin-left: 5px;
+    background-color: transparent;
+    width: 40% !important;
+  }
+}
+
 
 .contact-links {
   background-color: #1f2e43;
@@ -117,7 +129,7 @@
 
 .form-item {
   position: relative;
-  margin: 10px;
+  margin: 0;
 }
 
 label, input, textarea {
@@ -139,8 +151,8 @@ input, textarea {
   outline: 0;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-bottom: 20px;
-  padding: 12px;
+  margin-bottom: 10px;
+  padding: 10px;
   font-size: clamp(15px, 1.5vw, 18px);
 }
 
@@ -155,20 +167,21 @@ textarea:valid+label {
 }
 
 .submit-btn {
-  background-color: $bg-secondary;
+  background-color: transparent;
   filter: drop-shadow(2px 2px 3px #0003);
   color: $color-secondary;
   font-family: $font-primary;
   font-size: clamp(16px, 1.6vw, 18px);
   display: block;
-  padding: 12px 20px;
-  margin: 2px auto;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
   transition: 0.2s;
   width: 100%;
+  border: 2px solid $color-primary;
+  height: max-content;
+  padding: 8px;
 }
 
 .submit-btn:hover {

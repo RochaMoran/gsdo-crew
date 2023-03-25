@@ -1,66 +1,22 @@
 <template>
-  <article class="section contact" id="contact">
-    <div class="contact-box">
-      <div class="contact-links">
-        <h2 class="contact-title">Contact Us</h2>
-        <div class="links">
-          <div class="link">
-            <a
-              ><img
-                src="https://i.postimg.cc/m2mg2Hjm/linkedin.png"
-                alt="linkedin"
-                class="social-media__icon"
-            /></a>
-          </div>
-          <div class="link">
-            <a
-              ><img
-                src="https://i.postimg.cc/YCV2QBJg/github.png"
-                alt="github"
-                class="social-media__icon"
-            /></a>
-          </div>
-          <div class="link">
-            <a
-              ><img
-                src="https://i.postimg.cc/W4Znvrry/codepen.png"
-                alt="codepen"
-                class="social-media__icon"
-            /></a>
-          </div>
-          <div class="link">
-            <a
-              ><img
-                src="https://i.postimg.cc/NjLfyjPB/email.png"
-                alt="email"
-                class="social-media__icon"
-            /></a>
-          </div>
+    <form ref="form" autocomplete="off" @submit.prevent="onSubmit()">
+      <div class="form-item">
+        <input placeholder="Name" type="text" name="sender" v-model="to_name" :class="{ 'is-invalid': nameError }"/>
+        <div v-if="nameError" class="invalid-feedback">{{ nameError }}</div>
+      </div>
+      <div class="form-item">
+        <input placeholder="Email" type="text" name="to_email" v-model="to_email" :class="{ 'is-invalid': emailError }" />
+        <div v-if="emailError" class="invalid-feedback">{{ emailError }}</div>
+      </div>
+      <div class="form-item">
+        <div class="form-textarea">
+          <textarea rows="1" placeholder="Message" name="message" v-model="message" :class="{ 'is-invalid': messageError }"></textarea>
+          <button class="submit-btn">Send</button>
         </div>
+        <div v-if="messageError" class="invalid-feedback">{{ messageError }}</div>
       </div>
-      <div class="contact-form-wrapper">
-        <form ref="form" autocomplete="off" @submit.prevent="onSubmit()">
-          <div class="form-item">
-            <input type="text" name="sender" v-model="to_name" :class="{ 'is-invalid': nameError }"/>
-            <label for="to_name" :class="{ 'is-invalid__label': nameError }">Name:</label>
-            <div v-if="nameError" class="invalid-feedback">{{ nameError }}</div>
-          </div>
-          <div class="form-item">
-            <input type="text" name="to_email" v-model="to_email" :class="{ 'is-invalid': emailError }" />
-            <label for="to_email" :class="{ 'is-invalid__label': emailError }">Email:</label>
-            <div v-if="emailError" class="invalid-feedback">{{ emailError }}</div>
-          </div>
-          <div class="form-item">
-            <textarea class="" name="message" v-model="message" :class="{ 'is-invalid': messageError }"></textarea>
-            <label for="message" :class="{ 'is-invalid__label': messageError }">Message:</label>
-            <div v-if="messageError" class="invalid-feedback">{{ messageError }}</div>
-          </div>
-          <button class="submit-btn">Enviar Mensaje</button>
-        </form>
-      </div>
-    </div>
+    </form>
     <div class="resp-message" v-if="formSubmitted" :class="{'resp-success': resp.ok, 'resp-error': !resp.ok}">{{ resp.message }}</div>
-  </article>
 </template>
 
 <script>

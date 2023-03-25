@@ -2,19 +2,9 @@
   <section class="section header">
     <article class="header-info">
       <p>
-        Bringing your ideas to life with seamless design and flawless functionality.
+        The details are not the details, they make the desing.
+        <span>/Charles Eames</span>
       </p>
-      <a class="header-info__button" href="#contact">
-        Contact us
-        <span class="blob-btn__inner">
-        <span class="blob-btn__blobs">
-          <span class="blob-btn__blob"></span>
-          <span class="blob-btn__blob"></span>
-          <span class="blob-btn__blob"></span>
-          <span class="blob-btn__blob"></span>
-        </span>
-      </span>
-      </a>
     </article>
     <article class="header-titles">
       <h1>GSDO</h1>
