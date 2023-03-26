@@ -134,6 +134,7 @@
 
 label, input, textarea {
   font-family: $font-primary;
+  font-weight: bold;
 }
 
 label {
@@ -172,6 +173,7 @@ textarea:valid+label {
   color: $color-secondary;
   font-family: $font-primary;
   font-size: clamp(16px, 1.6vw, 18px);
+  font-weight: bold;
   display: block;
   border: none;
   border-radius: 4px;
