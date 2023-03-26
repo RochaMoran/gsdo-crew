@@ -11,7 +11,7 @@
         <input
           placeholder="Name"
           type="text"
-          name="sender"
+          name="to_name"
           v-model="to_name"
           :class="{ 'is-invalid': nameError }"
         />
@@ -36,8 +36,8 @@
             v-model="message"
             :class="{ 'is-invalid': messageError }"
           ></textarea>
-          <button v-if="!formSubmitted" class="submit-btn">SEND</button>
-          <div v-if="formSubmitted" class="spinner"></div>
+          <button v-if="!formLoading" class="submit-btn">SEND</button>
+          <div v-if="formLoading" class="spinner"></div>
         </div>
         <div v-if="messageError" class="invalid-feedback">
           {{ messageError }}
@@ -69,6 +69,7 @@ export default {
       messageError: "",
       formValid: false,
       formSubmitted: false,
+      formLoading: false,
       resp: {
         ok: true,
         message: "",
@@ -86,6 +87,7 @@ export default {
         };
 
         this.formSubmitted = true;
+        this.formLoading = true;
         emailjs
           .sendForm(
             service_email.email_service,
@@ -113,6 +115,7 @@ export default {
             }
           );
 
+        this.formLoading = false;
         setTimeout(() => {
           this.formSubmitted = false;
         }, 10000);
