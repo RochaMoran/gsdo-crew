@@ -77,6 +77,7 @@
         font-family: $font-primary;
         opacity: 0;
         overflow: hidden; 
+        cursor: pointer;
 
         & .work-image__container {
             filter: brightness(.9);
