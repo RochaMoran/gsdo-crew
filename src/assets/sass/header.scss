@@ -11,6 +11,7 @@
 
     & .logo {
       width: 500px;
+      height: 100%;
       height: max-content;
       object-fit: cover;
       @include show-animation("logo", 0, 70px);
@@ -26,6 +27,10 @@
       @media screen and (max-width: 750px) {
         width: 50%;
       }
+
+      @media screen and (max-width: 500px) {
+        width: 80%;
+      }
     } 
 
     @media screen and (max-width: 915px) {
@@ -40,8 +45,8 @@
 
   & .header-info {
     font-family: $font-primary;
-    width: 500px;
-    font-size: 3rem;
+    width: 570px;
+    font-size: 3.5rem;
     overflow: hidden;
     
     position: relative;
@@ -62,23 +67,33 @@
     }
 
     @media screen and (max-width: 1050px) {
-      font-size: 2.1rem;
+      width: 405px;
+      font-size: 2.5rem;
+    }
+    
+    @media screen and (max-width: 915px) {
+      width: 370px;
+      font-size: 2.2rem;
     }
 
     @media screen and (max-width: 750px) {
-      text-align: center;
-      font-size: 1.4rem;
-    }
-   
-    @media screen and (max-width: 520px) {
       width: 100%;
+      text-align: center;
+      font-size: 1.6rem;
     }
   }
 
   @media screen and (max-width: 750px) {
+    position: relative;
+    bottom: 15px;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+  }
+
+  @media screen and (max-width: 500px) {
+    position: relative;
+    bottom: 5px;
   }
 }
 
@@ -134,7 +149,7 @@
         transform: translate(0, 0) scale(1) rotate(0deg);
       }
       50% {
-        opacity: .7;
+        opacity: .1;
       }
       100% {
         transform: translate(0, -100vh) scale(1.5) rotate(360deg);

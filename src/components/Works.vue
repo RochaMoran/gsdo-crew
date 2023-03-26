@@ -1,65 +1,57 @@
 <template>
-  <div class="container-works" id="works">
+  <section class="container-works" id="works">
     <TitleComponent title="WORKS" />
-    <section class="section works" >
+    <div class="section works" >
       <article class="work-one">
-        <WorkComponent title="/BrasilSul And Campaign" :img="imgBrasilSul" @click="showModal(imgBrasilSul, '/BrasilSul And Campaign')"/>
+        <WorkComponent :title="items[0].title" :img="items[0].img" @click="showModal(items[0].images, items[0].title)"/>
       </article>
       <article class="work-container">
-        <WorkComponent title="/Imodium® Ad Campaign" :img="imgImodium" @click="showModal(imgImodium, '/Imodium® Ad Campaign')"/>
-        <WorkComponent title="/Healthy Essentials" :img="imgHealthyEssentials" @click="showModal(imgHealthyEssentials, '/Healthy Essentials')"/>
+        <WorkComponent title="/Imodium® Ad Campaign" :img="imgImodium" @click="showModal([imgImodium], '/Imodium® Ad Campaign')"/>
+        <WorkComponent title="/Healthy Essentials" :img="imgHealthyEssentials" @click="showModal([imgHealthyEssentials], '/Healthy Essentials')"/>
       </article>
       <article class="work-container">
-        <WorkComponent title="/Listerine Total Care" :img="imgListerine" @click="showModal(imgListerine, '/Listerine Total Care')" />
-        <WorkComponent title="/Neutrogea #1" :img="imgNeutrogea1" @click="showModal(imgNeutrogea1, '/Neutrogea #1')" />
+        <WorkComponent title="/Listerine Total Care" :img="imgListerine" @click="showModal([imgListerine], '/Listerine Total Care')" />
+        <WorkComponent title="/Neutrogea #1" :img="imgNeutrogea1" @click="showModal([imgNeutrogea1], '/Neutrogea #1')" />
       </article>
       <article class="work-one">
-        <WorkComponent title="/Made For Woman" :img="imgMadeForWoman" @click="showModal(imgMadeForWoman, '/Made For Woman')" />
+        <WorkComponent title="/Neutrogea Deep Clean" :img="imgNeutrogea2" @click="showModal([imgNeutrogea2], '/Neutrogea Deep Clean')" />
       </article>
       <article class="work-one">
-        <WorkComponent title="/Made For Woman - Skin Fitness" :img="imgSkinFitness" @click="showModal(imgSkinFitness, '/Made For Woman - Skin Fitness')" />
+        <WorkComponent :title="items[1].title" :img="items[1].img" @click="showModal(items[0].images, items[0].title)" />
       </article>
       <article class="work-container">
-        <WorkComponent title="/Neutrogea Deep Clean" :img="imgNeutrogea2" @click="showModal(imgNeutrogea2, '/Neutrogea Deep Clean')" />
-        <WorkComponent title="/European Gastronomic Festival" :img="imgGastronomicFestival" @click="showModal(imgGastronomicFestival, '/European Gastronomic Festival')" />
+        <WorkComponent title="/Exjade deferasirox" :img="imgExjade" @click="showModal([imgExjade], '/Exjade deferasirox')" />
+        <WorkComponent title="/HSBC it´s not surprising here" :img="imgHsbc" @click="showModal([imgHsbc], '/HSBC it´s not surprising here')" />
       </article>
       <article class="work-container">
-        <WorkComponent title="/European Gastronomic Festival #2" :img="imgGastronomicFestival2" @click="showModal(imgGastronomicFestival2, '/European Gastronomic Festival #2')" />
-        <WorkComponent title="/European Gastronomic Festival #3" :img="imgGastronomicFestival3" @click="showModal(imgGastronomicFestival3, '/European Gastronomic Festival #3')" />
+        <WorkComponent title="/HSBC" :img="imgHsbc2" @click="showModal([imgHsbc2], '/HSBC')" />
+        <WorkComponent title="/Inter S&R" :img="imgInter" @click="showModal([imgInter], '/Inter S&R')" />
       </article>
       <article class="work-one">
-        <WorkComponent title="/Abbott " :img="imgAbbott" @click="showModal(imgAbbott, '/Abbott')" />
+        <WorkComponent title="/Abbott " :img="imgAbbott" @click="showModal([imgAbbott], '/Abbott')" />
       </article>
       <article class="work-one">
-        <WorkComponent title="/Children's Pepto " :img="imgPepto" @click="showModal(imgPepto, '/Childrens Pepto')" />
+        <WorkComponent title="/Children's Pepto " :img="imgPepto" @click="showModal([imgPepto], '/Childrens Pepto')" />
       </article>
       <article class="work-container">
-        <WorkComponent title="/Exjade deferasirox" :img="imgExjade" @click="showModal(imgExjade, '/Exjade deferasirox')" />
-        <WorkComponent title="/HSBC it´s not surprising here" :img="imgHsbc" @click="showModal(imgHsbc, '/HSBC it´s not surprising here')" />
+        <WorkComponent title="/Risk & energy risk" :img="imgRisk" @click="showModal([imgRisk], '/Risk & energy risk')" />
+        <WorkComponent title="/Union Square Lofts" :img="imgUnionSquare" @click="showModal([imgUnionSquare], '/Union Square Lofts')" />
       </article>
       <article class="work-container">
-        <WorkComponent title="/HSBC" :img="imgHsbc2" @click="showModal(imgHsbc2, '/HSBC')" />
-        <WorkComponent title="/Inter S&R" :img="imgInter" @click="showModal(imgInter, '/Inter S&R')" />
+        <WorkComponent title="/Listerine Smart Rinse" :img="imgListerineSmartRinse" @click="showModal([imgListerineSmartRinse], '/Listerine Smart Rinse')" />
+        <WorkComponent title="/Prilosec" :img="imgPrilosec" @click="showModal([imgPrilosec], '/Prilosec')" />
       </article>
       <article class="work-one">
-        <WorkComponent title="/Listerine Smart Rinse" :img="imgListerineSmartRinse" @click="showModal(imgListerineSmartRinse, '/Listerine Smart Rinse')" />
+        <WorkComponent title="/Somos World Vaccine" :img="imgSomosWorldVaccine" @click="showModal([imgSomosWorldVaccine], '/Somos World Vaccine', 'https://somos-world-vaccine-congress-2022.vercel.app/')" />
       </article>
       <article class="work-one">
-        <WorkComponent title="/Prilosec" :img="imgPrilosec" @click="showModal(imgPrilosec, '/Prilosec')" />
+        <WorkComponent title="/Dr. Ramon Tallaj Website" :img="imgFoundation" @click="showModal([imgFoundation], '/Dr. Ramon Tallaj Website', 'https://drramontallajfoundation.org/')" />
       </article>
       <article class="work-container">
-        <WorkComponent title="/Risk & energy risk" :img="imgRisk" @click="showModal(imgRisk, '/Risk & energy risk')" />
-        <WorkComponent title="/Union Square Lofts" :img="imgUnionSquare" @click="showModal(imgUnionSquare, '/Union Square Lofts')" />
+        <WorkComponent title="/SOMOS Community Care - Expos22" :img="imgSomosExpoS22" @click="showModal([imgSomosExpoS22], '/SOMOS Community Care - Expos22', 'https://somos-exposd22.vercel.app/')" />
       </article>
-      <article class="work-container">
-        <WorkComponent title="/Somos World Vaccine" :img="imgSomosWorldVaccine" @click="showModal(imgSomosWorldVaccine, '/Somos World Vaccine', 'https://somos-world-vaccine-congress-2022.vercel.app/')" />
-        <WorkComponent title="/Dr. Ramon Tallaj Website" :img="imgFoundation" @click="showModal(imgFoundation, '/Dr. Ramon Tallaj Website', 'https://drramontallajfoundation.org/')" />
-      </article>
-      <article class="work-one">
-        <WorkComponent title="/SOMOS Community Care - Expos22" :img="imgSomosExpoS22" @click="showModal(imgSomosExpoS22, '/SOMOS Community Care - Expos22', 'https://somos-exposd22.vercel.app/')" />
-      </article>
-    </section>
     </div>
+    </section>
   <ModalWork v-if="show" :item="selected" :changeShow="changeShow"/>
 </template>
 
@@ -102,6 +94,28 @@ export default {
   },
   data() {
     return {
+      items: [
+        {
+          id: 1,
+          title: "/Brasil Sul",
+          img: imgBrasilSul,
+          images: [
+            imgBrasilSul,
+            imgSkinFitness,
+            imgMadeForWoman
+          ]
+        },
+        {
+          id: 2,
+          title: "/European Gastronomic Festival",
+          img: imgGastronomicFestival,
+          images: [
+            imgGastronomicFestival,
+            imgGastronomicFestival2,
+            imgGastronomicFestival3
+          ]
+        },
+      ],
       imgBrasilSul,
       imgImodium,
       imgHealthyEssentials,
@@ -136,11 +150,11 @@ export default {
     };
   },
   methods: {
-    showModal(img, title, url = null) {
+    showModal(images, title, url = null) {
       this.selected = {
-        title,
-        img,
-        url
+        title: title,
+        images: images,
+        url: url || null
       };
       this.changeShow();
     },

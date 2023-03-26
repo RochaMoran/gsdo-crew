@@ -48,7 +48,25 @@
 }
 
 .nav-item__active {
-    & a {
-        text-decoration: underline !important;
+   position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        height: 3px;
+        border-radius: 5px;
+        width: 0;
+        background: $bg-secondary;
+        animation: animation-active-nav .3s ease forwards;
+    }
+
+    @keyframes animation-active-nav {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
     }
 }

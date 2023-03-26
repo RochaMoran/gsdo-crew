@@ -16,9 +16,9 @@ body,
 .navbar-active,
 .modalHead {
     background: $bg-primary;
-    background-image: url(/src/assets/images/backgound-noise.png);
-    background-size: contain;
-    background-attachment: fixed;
+    // background-image: url(/src/assets/images/backgound-noise.png);
+    // background-size: contain;
+    // background-attachment: fixed;
 
     &::-webkit-scrollbar {
         width: 0;
@@ -28,7 +28,7 @@ body,
 .loading {
     position: fixed;
     z-index: 5;
-    background-color: $bg-secondary;
+    background-color: $bg-primary;
     width: 100%;
     height: 100%;
     animation: loading-animation .8s ease-in-out forwards;
@@ -37,7 +37,7 @@ body,
     & .loading-children {
         position: fixed;
         z-index: 5;
-        background-color: #2e4464;
+        background-color: $bg-third;
         width: 100%;
         height: 100%;
         transform: translateX(100%);
@@ -194,6 +194,18 @@ body,
       outline: none;
       border: none;
       cursor: pointer;
+
+      & img {
+        position: relative;
+        top: 3px;
+        width: 25px;
+        height: 25px;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
     }
   }
 
