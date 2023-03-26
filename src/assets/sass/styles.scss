@@ -1,4 +1,5 @@
 @import './mixins/show-animation.scss';
+@import './_variables.scss';
 @import './navbar.scss';
 @import './header.scss';
 @import './works.scss';
@@ -11,7 +12,9 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+body,
+.navbar-active,
+.modalHead {
     background: $bg-primary;
     background-image: url(/src/assets/images/backgound-noise.png);
     background-size: contain;
@@ -43,6 +46,49 @@ body {
         
     }
 }
+
+
+.resp-message {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    text-align: center;
+    padding: 8px;
+    color: #fff;
+    font-weight: bold;
+  
+    @include show-animation("resp-message", 0, 100px, 1s, ease-in);
+}
+  
+.resp-success {
+    background-color: green;
+}
+
+.resp-error {
+    background-color: red;
+}
+
+
+.spinner {
+    display: inline-block;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
 
 @keyframes loading-animation {
     0% {
@@ -81,6 +127,98 @@ body {
     }
     
     @media screen and (max-width: 420px) {
-        padding: 5px;
+        padding: none;
     }
+}
+
+@keyframes modal-animation {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes modal-bg-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 25;
+  background-color: $color-primary;
+  font-family: $font-primary;
+  border-radius: 5px 0 5px 0;
+  overflow: hidden;
+  box-shadow: 3px 3px 10px 0px rgba(28, 28, 28, 0.75);
+  animation: modal-animation 0.3s ease-in-out forwards;
+
+  & .modalHead,
+  & .modalBody {
+    padding: 7px 15px;
+  }
+
+  & .modalHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(83, 83, 83);
+
+    & .modalHeadTitle {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: $color-primary;
+    }
+
+    & .modalHeadButtonClose {
+      color: $color-primary;
+      background-color: transparent;
+      font-size: 1.3rem;
+      padding: 0;
+      margin: 0;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  & .modalBody {
+    display: grid;
+    place-items: center;
+    padding: 0;
+    height: 100%;
+    background-color: white;
+    overflow: auto;
+
+    & img {
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
+    }
+  }
+}
+.modalBackground {
+  position: fixed;
+  background-color: rgba(54, 54, 54, 0.306);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  animation: modal-bg-animation 0.3s ease-in-out forwards;
 }

@@ -4,10 +4,9 @@
     <div class="crew-container">
       <div class="crew-container-carrousel">
         <CrewMember
-          v-for="(member, i) in members"
+          v-for="member in members"
           :key="member.id"
           :member="member"
-          :isActive="currentIndex === (i - 1)"
         ></CrewMember>
       </div>
     </div>
@@ -23,7 +22,14 @@
 
 <script>
 import CrewMember from "./MemberCrew.vue";
-import stevenImg from "@/assets/images/me.jpg";
+import joelImg from "@/assets/images/crew/nestor-del-prado.webp";
+import stevenImg from "@/assets/images/crew/steven-rocha.webp";
+import albertoImg from "@/assets/images/crew/alberto-molina.webp";
+import euclidesImg from "@/assets/images/crew/euclides-alonso.webp";
+import hansImg from "@/assets/images/crew/hans-daniel.webp";
+import fabricioImg from "@/assets/images/crew/fabricio-placencia.webp";
+import marleneImg from "@/assets/images/crew/marlene-nunez.webp";
+import oliverImg from "@/assets/images/crew/oliver-hernandez.webp";
 import TitleComponent from "@/components/Title.vue";
 
 export default {
@@ -40,40 +46,52 @@ export default {
       members: [
         {
           id: 1,
+          name: "Nestor Del Prado",
+          rol: "Creative",
+          image: joelImg,
+        },
+        {
+          id: 2,
+          name: "Hans Daniel",
+          rol: "Creative",
+          image: hansImg,
+        },
+        {
+          id: 3,
+          name: "Euclides Alonso",
+          rol: "Creative/3D Artist",
+          image: euclidesImg,
+        },
+        {
+          id: 4,
+          name: "Marlene Nuñez",
+          rol: "Project Coordinator",
+          image: marleneImg,
+        },
+        {
+          id: 5,
+          name: "Alberto Molina",
+          rol: "Web Developer/UX",
+          image: albertoImg,
+        },
+        {
+          id: 6,
           name: "Steven Rocha",
           rol: "Web Developer/UX",
           image: stevenImg,
         },
         {
-          id: 2,
-          name: "Hans Daniel",
-          rol: "Creative Director",
-          image: stevenImg,
-        },
-        {
-          id: 3,
-          name: "Euclides Alonso",
-          rol: "SCD/3D Artist",
-          image: stevenImg,
-        },
-        {
-          id: 4,
-          name: "Marlene Nuñez",
+          id: 7,
+          name: "Fabricio Placencia",
           rol: "Project Manager",
-          image: stevenImg,
+          image: fabricioImg,
         },
         {
-          id: 5,
-          name: "Nestor Molina",
-          rol: "Desarrollador Web",
-          image: stevenImg,
+          id: 8,
+          name: "Oliver Hernandez",
+          rol: "Technology Advisor",
+          image: oliverImg,
         },
-        {
-          id: 6,
-          name: "Nestor Del Prado",
-          rol: "Diseñador Gráfico",
-          image: stevenImg,
-        }
       ],
     };
   },
@@ -82,8 +100,7 @@ export default {
       if (this.scrollPos > 0) {
         const carrousel = document.querySelector(".crew-container-carrousel");
         this.currentIndex -= 1;
-        console.log(window.innerWidth);
-        this.scrollPos -= window.innerWidth < 600 ? 325 : 400;
+        this.scrollPos -= window.innerWidth < 600 ? 350 : 400;
         carrousel.scrollTo({
           top: 0,
           left: this.scrollPos,
@@ -95,7 +112,7 @@ export default {
       const carrousel = document.querySelector(".crew-container-carrousel");
       if (this.scrollPos + carrousel.clientWidth < carrousel.scrollWidth) {
         this.currentIndex += 1;
-        this.scrollPos += window.innerWidth < 600 ? 325 : 400;
+        this.scrollPos += window.innerWidth < 600 ? 350 : 400;
         carrousel.scrollTo({
           top: 0,
           left: this.scrollPos,

@@ -8,11 +8,12 @@
 </template>
 
 <script>
+
 export default {
   name: "WorkComponent",
   props: {
     title: String,
-    img: String
+    img: String,
   },
   mounted() {
     const options = {

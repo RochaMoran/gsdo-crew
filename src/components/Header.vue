@@ -1,5 +1,5 @@
 <template>
-  <section class="section header">
+  <section class="section header" id="header">
     <article class="header-info">
       <p>
         The details are not the details, they make the desing.
@@ -7,8 +7,7 @@
       </p>
     </article>
     <article class="header-titles">
-      <h1>GSDO</h1>
-      <span>/Crew</span>
+      <img class="logo" src="@/assets/images/logo.svg" alt="logo">
     </article>
   </section>
   <div class="burbujas">
@@ -22,6 +21,7 @@
 </template>
 
 <script>
+// import logo from "@/assets/images/logo.svg";
 export default {
   name: "HeaderComponent",
 };
