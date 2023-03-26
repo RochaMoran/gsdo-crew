@@ -22,14 +22,14 @@
 
 <script>
 import CrewMember from "./MemberCrew.vue";
-import joelImg from "@/assets/images/nestor-del-prado.webp";
-import stevenImg from "@/assets/images/steven-rocha.webp";
-import albertoImg from "@/assets/images/alberto-molina.webp";
-import euclidesImg from "@/assets/images/euclides-alonso.webp";
-import hansImg from "@/assets/images/hans-daniel.webp";
-import fabricioImg from "@/assets/images/fabricio-placencia.webp";
-import marleneImg from "@/assets/images/marlene-nunez.webp";
-import oliverImg from "@/assets/images/oliver-hernandez.webp";
+import joelImg from "@/assets/images/crew/nestor-del-prado.webp";
+import stevenImg from "@/assets/images/crew/steven-rocha.webp";
+import albertoImg from "@/assets/images/crew/alberto-molina.webp";
+import euclidesImg from "@/assets/images/crew/euclides-alonso.webp";
+import hansImg from "@/assets/images/crew/hans-daniel.webp";
+import fabricioImg from "@/assets/images/crew/fabricio-placencia.webp";
+import marleneImg from "@/assets/images/crew/marlene-nunez.webp";
+import oliverImg from "@/assets/images/crew/oliver-hernandez.webp";
 import TitleComponent from "@/components/Title.vue";
 
 export default {
