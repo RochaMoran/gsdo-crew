@@ -22,7 +22,14 @@
 
 <script>
 import CrewMember from "./MemberCrew.vue";
-import stevenImg from "@/assets/images/me.jpg";
+import joelImg from "@/assets/images/nestor-del-prado.webp";
+import stevenImg from "@/assets/images/steven-rocha.webp";
+import albertoImg from "@/assets/images/alberto-molina.webp";
+import euclidesImg from "@/assets/images/euclides-alonso.webp";
+import hansImg from "@/assets/images/hans-daniel.webp";
+import fabricioImg from "@/assets/images/fabricio-placencia.webp";
+import marleneImg from "@/assets/images/marlene-nunez.webp";
+import oliverImg from "@/assets/images/oliver-hernandez.webp";
 import TitleComponent from "@/components/Title.vue";
 
 export default {
@@ -39,40 +46,52 @@ export default {
       members: [
         {
           id: 1,
+          name: "Nestor Del Prado",
+          rol: "Creative",
+          image: joelImg,
+        },
+        {
+          id: 2,
+          name: "Hans Daniel",
+          rol: "Creative",
+          image: hansImg,
+        },
+        {
+          id: 3,
+          name: "Euclides Alonso",
+          rol: "Creative/3D Artist",
+          image: euclidesImg,
+        },
+        {
+          id: 4,
+          name: "Marlene Nuñez",
+          rol: "Project Coordinator",
+          image: marleneImg,
+        },
+        {
+          id: 5,
+          name: "Alberto Molina",
+          rol: "Web Developer/UX",
+          image: albertoImg,
+        },
+        {
+          id: 6,
           name: "Steven Rocha",
           rol: "Web Developer/UX",
           image: stevenImg,
         },
         {
-          id: 2,
-          name: "Hans Daniel",
-          rol: "Creative Director",
-          image: stevenImg,
-        },
-        {
-          id: 3,
-          name: "Euclides Alonso",
-          rol: "SCD/3D Artist",
-          image: stevenImg,
-        },
-        {
-          id: 4,
-          name: "Marlene Nuñez",
+          id: 7,
+          name: "Fabricio Placencia",
           rol: "Project Manager",
-          image: stevenImg,
+          image: fabricioImg,
         },
         {
-          id: 5,
-          name: "Nestor Molina",
-          rol: "Desarrollador Web",
-          image: stevenImg,
+          id: 8,
+          name: "Oliver Hernandez",
+          rol: "Technology Advisor",
+          image: oliverImg,
         },
-        {
-          id: 6,
-          name: "Nestor Del Prado",
-          rol: "Diseñador Gráfico",
-          image: stevenImg,
-        }
       ],
     };
   },
