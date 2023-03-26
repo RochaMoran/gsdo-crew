@@ -11,9 +11,8 @@
 
     & .logo {
       width: 500px;
-      height: 100%;
       height: max-content;
-      object-fit: cover;
+      object-fit: contain;
       @include show-animation("logo", 0, 70px);
 
       @media screen and (max-width: 1200px) {
