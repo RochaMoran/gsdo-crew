@@ -9,28 +9,24 @@
     text-align: right;
     overflow: hidden;
 
-    & h1 {
-      color: rgb(255, 225, 0);
-      position: relative;
-      font-size: 10rem;
-      margin: 0;
-      font-weight: bold;
-      @include show-animation("title-header", 0, 200px);
+    & .logo {
+      width: 500px;
+      height: max-content;
+      object-fit: cover;
+      @include show-animation("logo", 0, 70px);
 
-      @media screen and (max-width: 1050px) {
-        font-size: 8rem;
+      @media screen and (max-width: 1200px) {
+        width: 400px;
       }
       
-      @media screen and (max-width: 520px) {
-        font-size: 5rem;
+      @media screen and (max-width: 1050px) {
+        width: 300px;
       }
-    }
-
-    & span {
-      color: rgb(255, 225, 0);
-      font-size: 2rem;
-      @include show-animation("subtitle-header", 0, 0, 2s, ease-in);
-    }
+      
+      @media screen and (max-width: 750px) {
+        width: 50%;
+      }
+    } 
 
     @media screen and (max-width: 915px) {
       width: 70%;
@@ -52,7 +48,7 @@
     top: 25%;
     
     & p {
-      font-weight: 500;
+      font-weight: 800;
       color: $color-primary;
       @include show-animation("header-info", 0, -70px);
 
@@ -66,11 +62,12 @@
     }
 
     @media screen and (max-width: 1050px) {
-      font-size: 1.3rem;
+      font-size: 2.1rem;
     }
 
     @media screen and (max-width: 750px) {
       text-align: center;
+      font-size: 1.4rem;
     }
    
     @media screen and (max-width: 520px) {
