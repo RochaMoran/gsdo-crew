@@ -67,7 +67,7 @@
         width: 34.5%;
 
         & .work {
-            height: 48.5%;
+            height: 48.7%;
         }
         @media screen and (max-width: 800px) {
             width: 100%;
@@ -118,5 +118,5 @@
 }
 
 .show-item {
-    @include show-animation("show-work", 0, 100px, .5s, ease-in);
+    @include show-animation("show-work", 0, 100px, .3s, ease-in);
 }

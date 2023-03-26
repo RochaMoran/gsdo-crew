@@ -3,11 +3,13 @@
       <div class="modalHead">
         <span class="modalHeadTitle">{{item.title}}</span>
         <button class="modalHeadButtonClose" @click="closeModal()">
-          X
+          <img src="@/assets/icons/cancel.png" alt="cancel">
         </button>
       </div>
       <div class="modalBody">
-        <img v-if="!item.url" :src="item.img" :alt="item.title">
+        <template v-if="!item.url">
+          <img v-for="(image, i) in item.images" :key="i" :src="image" :alt="item.title">
+        </template>
         <iframe
           v-if="item.url"
           :src="item.url"
@@ -26,7 +28,7 @@ export default {
     item: {
       url: String,
       title: String,
-      img: String
+      images: Array
     },
     changeShow: Function
   },

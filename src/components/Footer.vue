@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="footer">
     <section class="footer-distributed">
       <article class="footer-left">
         <h3>/Get to know us<span></span></h3>
@@ -9,10 +9,11 @@
           solutions and innovative strategies, tailored to elevate your online and
           offline presence and captivate your target audience.
         </p>
+        <p class="links-footer"><a href="#works">Work</a> / <a href="#crew">Crew</a> / <a href="#clients">Clients</a> / <a href="#header">Home</a></p>
       </article>
       <article class="footer-center">
         <div>
-          <p><span>New Jersey</span> 491 Elm Ave, 2nd Floor bogota Nj07603</p>
+          <p><span>New Jersey</span> 491 Elm Ave, 2nd Floor <br> Bogota NJ 07603</p>
           <br>
           <p>/Social Media</p>
           <ul class="social-media-footer">
@@ -45,11 +46,9 @@
         </div>
   
         <div>
-          <p><span>Florida</span>14199 Wake Robin Drive Brooksville FL 34604</p>
-          <p>551.775.0020</p>
+          <p><span>Florida</span>14199 Wake Robin Drive <br> Brooksville FL 34604 <br> 551.775.0020</p>
           <br>
           <br>
-          <p class="links-footer"><a href="#works">Work</a> / <a href="#crew">Crew</a> / <a href="#clients">Clients</a> / <a href="#header">Home</a></p>
         </div>
       </article>
   
