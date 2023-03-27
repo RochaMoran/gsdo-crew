@@ -11,20 +11,21 @@
 
     & .logo {
       width: 500px;
-      height: max-content;
-      object-fit: contain;
+      height: 310px;
       @include show-animation("logo", 0, 70px);
 
       @media screen and (max-width: 1200px) {
         width: 400px;
+        height: 280px;
       }
       
       @media screen and (max-width: 1050px) {
-        width: 300px;
+        width: 320px;
+        height: 280px;
       }
       
       @media screen and (max-width: 750px) {
-        width: 50%;
+        width: 60%;
       }
 
       @media screen and (max-width: 500px) {
@@ -84,7 +85,7 @@
 
   @media screen and (max-width: 750px) {
     position: relative;
-    bottom: 15px;
+    bottom: 50px;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
@@ -93,6 +94,8 @@
   @media screen and (max-width: 500px) {
     position: relative;
     bottom: 5px;
+    justify-content: center;
+    height: 70%;
   }
 }
 
