@@ -25,18 +25,10 @@
                 display: inline-block;
                 position: relative;
                 text-decoration: none;
+                transition: color .3s ease;
 
-                &:after {
-                    content: "";
-                    display: block;
-                    margin: auto;
-                    height: 1.5px;
-                    width: 0px;
-                    transition: all .3s;
-                }
-                &:hover:after {
-                    width: 100%;
-                    background: $color-primary;
+                &:hover {
+                    color: $bg-secondary;
                 }
             }
         }
