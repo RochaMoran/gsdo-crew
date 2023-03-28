@@ -8,7 +8,7 @@
       </div>
       <div class="modalBody">
         <template v-if="!item.url">
-          <img v-for="(image, i) in item.images" :key="i" :src="image" :alt="item.title">
+          <img v-for="(image, i) in item.images" :key="i" :src="image" :alt="item.title" loading="lazy">
         </template>
         <iframe
           v-if="item.url"

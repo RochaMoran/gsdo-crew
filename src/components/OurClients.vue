@@ -3,7 +3,7 @@
     <TitleComponent title="CLIENTS" />
     <ul class="container-clients" >
       <li v-for="client in clients" :key="client.id">
-        <img :src="client.image" :alt="client.name" />
+        <img :src="client.image" :alt="client.name" loading="lazy" />
       </li>
     </ul>
   </section>

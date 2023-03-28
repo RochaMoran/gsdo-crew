@@ -1,7 +1,7 @@
 <template>
-  <section class="container-works" id="works">
-    <TitleComponent title="WORKS" />
-    <div class="section works" >
+  <section class="section container-works" id="works">
+    <TitleComponent title="WORKS"/>
+    <div class="works" >
       <article class="work-one">
         <WorkComponent :title="items[0].title" :img="items[0].img" @click="showModal(items[0].images, items[0].title)"/>
       </article>
