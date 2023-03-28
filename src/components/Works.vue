@@ -1,54 +1,48 @@
 <template>
-  <section class="container-works" id="works">
-    <TitleComponent title="WORKS" />
-    <div class="section works" >
+  <section class="section container-works" id="works">
+    <TitleComponent title="WORKS"/>
+    <div class="works" >
       <article class="work-one">
         <WorkComponent :title="items[0].title" :img="items[0].img" @click="showModal(items[0].images, items[0].title)"/>
       </article>
       <article class="work-container">
-        <WorkComponent title="/Imodium® Ad Campaign" :img="imgImodium" @click="showModal([imgImodium], '/Imodium® Ad Campaign')"/>
-        <WorkComponent title="/Healthy Essentials" :img="imgHealthyEssentials" @click="showModal([imgHealthyEssentials], '/Healthy Essentials')"/>
+        <WorkComponent title="/Imodium Ad Campaign" :img="imgImodium" @click="showModal([imgImodium], '/Imodium Ad Campaign')"/>
+        <WorkComponent title="/Healthy Essentials Ad Campaign" :img="imgHealthyEssentials" @click="showModal([imgHealthyEssentials], '/Healthy Essentials Ad Campaign')"/>
       </article>
       <article class="work-container">
-        <WorkComponent title="/Listerine Total Care" :img="imgListerine" @click="showModal([imgListerine], '/Listerine Total Care')" />
-        <WorkComponent title="/Neutrogea #1" :img="imgNeutrogea1" @click="showModal([imgNeutrogea1], '/Neutrogea #1')" />
+        <WorkComponent title="/Listerine Total Care Advertising" :img="imgListerine" @click="showModal([imgListerine], '/Listerine Total Care')" />
+        <WorkComponent :title="items[2].title" :img="items[2].img" @click="showModal(items[2].images, items[2].title)" />
       </article>
       <article class="work-one">
-        <WorkComponent title="/Neutrogea Deep Clean" :img="imgNeutrogea2" @click="showModal([imgNeutrogea2], '/Neutrogea Deep Clean')" />
+        <WorkComponent title="/Prilosec Advertising" :img="imgPrilosec" @click="showModal([imgPrilosec], '/Prilosec')" />
       </article>
       <article class="work-one">
-        <WorkComponent :title="items[1].title" :img="items[1].img" @click="showModal(items[0].images, items[0].title)" />
+        <WorkComponent :title="items[1].title" :img="items[1].img" @click="showModal(items[1].images, items[1].title)" />
       </article>
       <article class="work-container">
-        <WorkComponent title="/Exjade deferasirox" :img="imgExjade" @click="showModal([imgExjade], '/Exjade deferasirox')" />
-        <WorkComponent title="/HSBC it´s not surprising here" :img="imgHsbc" @click="showModal([imgHsbc], '/HSBC it´s not surprising here')" />
+        <WorkComponent title="/Exjade Ad Campaign" :img="imgExjade" @click="showModal([imgExjade], '/Exjade Ad Campaign')" />
+        <WorkComponent :title="items[3].title" :img="items[3].img" @click="showModal(items[3].images, items[3].title)" />
       </article>
       <article class="work-container">
-        <WorkComponent title="/HSBC" :img="imgHsbc2" @click="showModal([imgHsbc2], '/HSBC')" />
-        <WorkComponent title="/Inter S&R" :img="imgInter" @click="showModal([imgInter], '/Inter S&R')" />
+        <WorkComponent title="/Listerine Smart Rinse Advertising" :img="imgListerineSmartRinse" @click="showModal([imgListerineSmartRinse], '/Listerine Smart Rinse')" />
+        <WorkComponent title="/Inter S&R Ad Campaign" :img="imgInter" @click="showModal([imgInter], '/Inter S&R')" />
       </article>
       <article class="work-one">
-        <WorkComponent title="/Abbott " :img="imgAbbott" @click="showModal([imgAbbott], '/Abbott')" />
+        <WorkComponent title="/FreeStyle Freedom Advertising" :img="imgAbbott" @click="showModal([imgAbbott], '/Abbott')" />
       </article>
       <article class="work-one">
-        <WorkComponent title="/Children's Pepto " :img="imgPepto" @click="showModal([imgPepto], '/Childrens Pepto')" />
+        <WorkComponent title="/Children's Pepto Advertising" :img="imgPepto" @click="showModal([imgPepto], '/Childrens Pepto')" />
       </article>
       <article class="work-container">
-        <WorkComponent title="/Risk & energy risk" :img="imgRisk" @click="showModal([imgRisk], '/Risk & energy risk')" />
-        <WorkComponent title="/Union Square Lofts" :img="imgUnionSquare" @click="showModal([imgUnionSquare], '/Union Square Lofts')" />
+        <WorkComponent title="/Risk & energy risk Advertising" :img="imgRisk" @click="showModal([imgRisk], '/Risk & energy risk')" />
+        <WorkComponent title="/Union Square Lofts Ad Campaign" :img="imgUnionSquare" @click="showModal([imgUnionSquare], '/Union Square Lofts')" />
       </article>
       <article class="work-container">
-        <WorkComponent title="/Listerine Smart Rinse" :img="imgListerineSmartRinse" @click="showModal([imgListerineSmartRinse], '/Listerine Smart Rinse')" />
-        <WorkComponent title="/Prilosec" :img="imgPrilosec" @click="showModal([imgPrilosec], '/Prilosec')" />
-      </article>
-      <article class="work-one">
-        <WorkComponent title="/Somos World Vaccine" :img="imgSomosWorldVaccine" @click="showModal([imgSomosWorldVaccine], '/Somos World Vaccine', 'https://somos-world-vaccine-congress-2022.vercel.app/')" />
-      </article>
-      <article class="work-one">
         <WorkComponent title="/Dr. Ramon Tallaj Website" :img="imgFoundation" @click="showModal([imgFoundation], '/Dr. Ramon Tallaj Website', 'https://drramontallajfoundation.org/')" />
+        <WorkComponent title="/Festival of Biologics Splash Page" :img="imgSomosExpoS22" @click="showModal([imgSomosExpoS22], '/SOMOS Community Care - Expos22', 'https://somos-exposd22.vercel.app/')" />
       </article>
-      <article class="work-container">
-        <WorkComponent title="/SOMOS Community Care - Expos22" :img="imgSomosExpoS22" @click="showModal([imgSomosExpoS22], '/SOMOS Community Care - Expos22', 'https://somos-exposd22.vercel.app/')" />
+      <article class="work-one">
+        <WorkComponent title="/Worldvaccine Congress Splash Page" :img="imgSomosWorldVaccine" @click="showModal([imgSomosWorldVaccine], '/Somos World Vaccine', 'https://somos-world-vaccine-congress-2022.vercel.app/')" />
       </article>
     </div>
     </section>
@@ -97,7 +91,7 @@ export default {
       items: [
         {
           id: 1,
-          title: "/Brasil Sul",
+          title: "/BrasilSul Ad Campaign",
           img: imgBrasilSul,
           images: [
             imgBrasilSul,
@@ -107,12 +101,30 @@ export default {
         },
         {
           id: 2,
-          title: "/European Gastronomic Festival",
+          title: "/European Gastronomic Festival Ad Campaign",
           img: imgGastronomicFestival,
           images: [
             imgGastronomicFestival,
             imgGastronomicFestival2,
             imgGastronomicFestival3
+          ]
+        },
+        {
+          id: 3,
+          title: "/Neutrogena Advertising",
+          img: imgNeutrogea1,
+          images: [
+            imgNeutrogea1,
+            imgNeutrogea2
+          ]
+        },
+        {
+          id: 4,
+          title: "/HSBC Ad Campaign",
+          img: imgHsbc,
+          images: [
+            imgHsbc,
+            imgHsbc2
           ]
         },
       ],

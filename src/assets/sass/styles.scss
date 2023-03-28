@@ -16,9 +16,6 @@ body,
 .navbar-active,
 .modalHead {
     background: $bg-primary;
-    // background-image: url(/src/assets/images/backgound-noise.png);
-    // background-size: contain;
-    // background-attachment: fixed;
 
     &::-webkit-scrollbar {
         width: 0;
@@ -218,8 +215,8 @@ body,
     overflow: auto;
 
     & img {
-        width: 90%;
-        height: 90%;
+        width: 80%;
+        height: 80%;
         object-fit: contain;
     }
   }
