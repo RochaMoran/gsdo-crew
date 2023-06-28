@@ -2,7 +2,7 @@
   <section class="section header" id="header">
     <article class="header-info">
       <p>
-        The details are not <br> the details, they make <br> the desing.
+        The details are not <br> the details, they make <br> the design.
         <span>/Charles Eames</span>
       </p>
     </article>
